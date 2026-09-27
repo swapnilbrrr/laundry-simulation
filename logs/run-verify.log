@@ -1,0 +1,365 @@
+[  0.00s] {EVENT} Smart Laundry opens - 6 washers, 4 dryers, 2 kiosks, 50 customers expected.
+[  0.02s] [Washer-1] Washing started for Customer-01 (4111ms)
+[  0.91s] [Washer-2] Washing started for Customer-02 (4953ms)
+[  2.35s] [Washer-3] Washing started for Customer-03 (4050ms)
+[  4.13s] [Customer-01] finished washing on Washer-1
+[  4.14s] [Dryer-1] Drying started for Customer-01 (3490ms)
+[  5.19s] [Washer-4] Washing started for Customer-04 (4070ms)
+[  5.86s] [Customer-02] finished washing on Washer-2
+[  5.86s] [Dryer-2] Drying started for Customer-02 (3644ms)
+[  6.40s] [Customer-03] finished washing on Washer-3
+[  6.41s] [Dryer-3] Drying started for Customer-03 (3721ms)
+[  6.53s] [Washer-5] Washing started for Customer-05 (5105ms)
+[  7.63s] [Customer-01] finished drying on Dryer-1
+[  7.63s] [Kiosk-1] Payment started for Customer-01 (1658ms)
+[  7.70s] [Washer-6] Washing started for Customer-06 (5248ms)
+[  8.94s] [Washer-1] Washing started for Customer-07 (5700ms)
+[  9.26s] [Customer-04] finished washing on Washer-4
+[  9.26s] [Dryer-4] Drying started for Customer-04 (4854ms)
+[  9.29s] [Customer-01] paid at Kiosk-1
+[  9.29s] [Customer-01] done - left the laundromat after 9.27s total.
+[  9.51s] [Customer-02] finished drying on Dryer-2
+[  9.51s] [Kiosk-2] Payment started for Customer-02 (1395ms)
+[ 10.13s] [Customer-03] finished drying on Dryer-3
+[ 10.13s] [Kiosk-1] Payment started for Customer-03 (1059ms)
+[ 10.90s] [Customer-02] paid at Kiosk-2
+[ 10.90s] [Customer-02] done - left the laundromat after 10.00s total.
+[ 11.19s] [Washer-2] Washing started for Customer-08 (4603ms)
+[ 11.19s] [Customer-03] paid at Kiosk-1
+[ 11.19s] [Customer-03] done - left the laundromat after 8.84s total.
+[ 11.64s] [Customer-05] finished washing on Washer-5
+[ 11.64s] [Dryer-1] Drying started for Customer-05 (4995ms)
+[ 12.95s] [Customer-06] finished washing on Washer-6
+[ 12.95s] [Dryer-2] Drying started for Customer-06 (3186ms)
+[ 14.11s] [Washer-3] Washing started for Customer-09 (4059ms)
+[ 14.12s] [Customer-04] finished drying on Dryer-4
+[ 14.12s] [Kiosk-2] Payment started for Customer-04 (1025ms)
+[ 14.65s] [Customer-07] finished washing on Washer-1
+[ 14.65s] [Dryer-3] Drying started for Customer-07 (4653ms)
+[ 14.85s] [Washer-4] Washing started for Customer-10 (5446ms)
+[ 15.14s] [Customer-04] paid at Kiosk-2
+[ 15.14s] [Customer-04] done - left the laundromat after 9.95s total.
+[ 15.79s] [Customer-08] finished washing on Washer-2
+[ 15.79s] [Dryer-4] Drying started for Customer-08 (4618ms)
+[ 16.14s] [Customer-06] finished drying on Dryer-2
+[ 16.14s] [Kiosk-1] Payment started for Customer-06 (1065ms)
+[ 16.64s] [Customer-05] finished drying on Dryer-1
+[ 16.64s] [Kiosk-2] Payment started for Customer-05 (1238ms)
+[ 17.21s] [Customer-06] paid at Kiosk-1
+[ 17.21s] [Customer-06] done - left the laundromat after 9.51s total.
+[ 17.49s] [Washer-5] Washing started for Customer-11 (4986ms)
+[ 17.87s] [Customer-05] paid at Kiosk-2
+[ 17.87s] [Customer-05] done - left the laundromat after 11.34s total.
+[ 18.17s] [Customer-09] finished washing on Washer-3
+[ 18.17s] [Dryer-2] Drying started for Customer-09 (3853ms)
+[ 19.30s] [Customer-07] finished drying on Dryer-3
+[ 19.30s] [Kiosk-1] Payment started for Customer-07 (1692ms)
+[ 19.35s] [Washer-6] Washing started for Customer-12 (5274ms)
+[ 20.29s] [Customer-10] finished washing on Washer-4
+[ 20.29s] [Dryer-1] Drying started for Customer-10 (4199ms)
+[ 20.41s] [Customer-08] finished drying on Dryer-4
+[ 20.41s] [Kiosk-2] Payment started for Customer-08 (1239ms)
+[ 21.00s] [Customer-07] paid at Kiosk-1
+[ 21.00s] [Customer-07] done - left the laundromat after 12.05s total.
+[ 21.65s] [Customer-08] paid at Kiosk-2
+[ 21.65s] [Customer-08] done - left the laundromat after 10.46s total.
+[ 22.02s] [Washer-1] Washing started for Customer-13 (4444ms)
+[ 22.02s] [Customer-09] finished drying on Dryer-2
+[ 22.02s] [Kiosk-1] Payment started for Customer-09 (1482ms)
+[ 22.48s] [Customer-11] finished washing on Washer-5
+[ 22.48s] [Dryer-3] Drying started for Customer-11 (3162ms)
+[ 23.51s] [Customer-09] paid at Kiosk-1
+[ 23.51s] [Customer-09] done - left the laundromat after 9.40s total.
+[ 23.96s] [Washer-2] Washing started for Customer-14 (4383ms)
+[ 24.49s] [Customer-10] finished drying on Dryer-1
+[ 24.50s] [Kiosk-2] Payment started for Customer-10 (1791ms)
+[ 24.63s] [Customer-12] finished washing on Washer-6
+[ 24.63s] [Dryer-4] Drying started for Customer-12 (3269ms)
+[ 25.65s] [Customer-11] finished drying on Dryer-3
+[ 25.65s] [Kiosk-1] Payment started for Customer-11 (1842ms)
+[ 26.29s] [Customer-10] paid at Kiosk-2
+[ 26.29s] [Customer-10] done - left the laundromat after 11.44s total.
+[ 26.32s] [Washer-3] Washing started for Customer-15 (4245ms)
+[ 26.46s] [Customer-13] finished washing on Washer-1
+[ 26.46s] [Dryer-2] Drying started for Customer-13 (4198ms)
+[ 26.61s] [Washer-4] Washing started for Customer-16 (4997ms)
+[ 27.49s] [Customer-11] paid at Kiosk-1
+[ 27.49s] [Customer-11] done - left the laundromat after 10.00s total.
+[ 27.90s] [Customer-12] finished drying on Dryer-4
+[ 27.90s] [Kiosk-2] Payment started for Customer-12 (1415ms)
+[ 28.35s] [Customer-14] finished washing on Washer-2
+[ 28.35s] [Dryer-1] Drying started for Customer-14 (3121ms)
+[ 29.31s] [Customer-12] paid at Kiosk-2
+[ 29.31s] [Customer-12] done - left the laundromat after 9.96s total.
+[ 29.44s] [Washer-5] Washing started for Customer-17 (4119ms)
+[ 30.56s] [Customer-15] finished washing on Washer-3
+[ 30.56s] [Dryer-3] Drying started for Customer-15 (4789ms)
+[ 30.67s] [Customer-13] finished drying on Dryer-2
+[ 30.67s] [Kiosk-1] Payment started for Customer-13 (1681ms)
+[ 31.47s] [Customer-14] finished drying on Dryer-1
+[ 31.47s] [Kiosk-2] Payment started for Customer-14 (1094ms)
+[ 31.61s] [Customer-16] finished washing on Washer-4
+[ 31.61s] [Dryer-4] Drying started for Customer-16 (3509ms)
+[ 32.12s] [Washer-6] Washing started for Customer-18 (4625ms)
+[ 32.35s] [Customer-13] paid at Kiosk-1
+[ 32.35s] [Customer-13] done - left the laundromat after 10.33s total.
+[ 32.57s] [Customer-14] paid at Kiosk-2
+[ 32.57s] [Customer-14] done - left the laundromat after 8.60s total.
+[ 33.47s] [Washer-1] Washing started for Customer-19 (5356ms)
+[ 33.56s] [Customer-17] finished washing on Washer-5
+[ 33.56s] [Dryer-2] Drying started for Customer-17 (3716ms)
+[ 35.12s] [Customer-16] finished drying on Dryer-4
+[ 35.12s] [Kiosk-1] Payment started for Customer-16 (1333ms)
+[ 35.35s] [Customer-15] finished drying on Dryer-3
+[ 35.35s] [Kiosk-2] Payment started for Customer-15 (1718ms)
+[ 36.36s] [Washer-2] Washing started for Customer-20 (5388ms)
+[ 36.46s] [Customer-16] paid at Kiosk-1
+[ 36.46s] [Customer-16] done - left the laundromat after 9.85s total.
+[ 36.75s] [Customer-18] finished washing on Washer-6
+[ 36.75s] [Dryer-1] Drying started for Customer-18 (4308ms)
+[ 37.07s] [Customer-15] paid at Kiosk-2
+[ 37.07s] [Customer-15] done - left the laundromat after 10.76s total.
+[ 37.27s] [Customer-17] finished drying on Dryer-2
+[ 37.27s] [Kiosk-1] Payment started for Customer-17 (1505ms)
+[ 37.62s] [Washer-3] Washing started for Customer-21 (4375ms)
+[ 37.74s] [Washer-4] Washing started for Customer-22 (4569ms)
+[ 38.78s] [Customer-17] paid at Kiosk-1
+[ 38.78s] [Customer-17] done - left the laundromat after 9.34s total.
+[ 38.79s] [Washer-5] Washing started for Customer-23 (5076ms)
+[ 38.85s] [Customer-19] finished washing on Washer-1
+[ 38.85s] [Dryer-4] Drying started for Customer-19 (3588ms)
+[ 39.23s] [Washer-6] Washing started for Customer-24 (5539ms)
+[ 40.29s] [Washer-1] Washing started for Customer-25 (4857ms)
+[ 41.06s] [Customer-18] finished drying on Dryer-1
+[ 41.06s] [Kiosk-2] Payment started for Customer-18 (1338ms)
+[ 41.75s] [Customer-20] finished washing on Washer-2
+[ 41.75s] [Dryer-3] Drying started for Customer-20 (3274ms)
+[ 41.99s] [Customer-21] finished washing on Washer-3
+[ 41.99s] [Dryer-2] Drying started for Customer-21 (4056ms)
+[ 42.31s] [Customer-22] finished washing on Washer-4
+[ 42.31s] [Dryer-1] Drying started for Customer-22 (4027ms)
+[ 42.40s] [Customer-18] paid at Kiosk-2
+[ 42.40s] [Customer-18] done - left the laundromat after 10.28s total.
+[ 42.44s] [Customer-19] finished drying on Dryer-4
+[ 42.44s] [Kiosk-1] Payment started for Customer-19 (1020ms)
+[ 43.24s] [Washer-2] Washing started for Customer-26 (5456ms)
+[ 43.46s] [Customer-19] paid at Kiosk-1
+[ 43.46s] [Customer-19] done - left the laundromat after 9.99s total.
+[ 43.87s] [Customer-23] finished washing on Washer-5
+[ 43.87s] [Dryer-4] Drying started for Customer-23 (4963ms)
+[ 44.77s] [Customer-24] finished washing on Washer-6
+[ 45.02s] [Customer-20] finished drying on Dryer-3
+[ 45.02s] [Kiosk-2] Payment started for Customer-20 (1373ms)
+[ 45.03s] [Dryer-3] Drying started for Customer-24 (3332ms)
+[ 45.15s] [Customer-25] finished washing on Washer-1
+[ 45.74s] [Washer-3] Washing started for Customer-27 (5586ms)
+[ 46.05s] [Customer-21] finished drying on Dryer-2
+[ 46.05s] [Kiosk-1] Payment started for Customer-21 (1846ms)
+[ 46.05s] [Dryer-2] Drying started for Customer-25 (3244ms)
+[ 46.34s] [Customer-22] finished drying on Dryer-1
+[ 46.40s] [Customer-20] paid at Kiosk-2
+[ 46.40s] [Customer-20] done - left the laundromat after 10.04s total.
+[ 46.40s] [Kiosk-2] Payment started for Customer-22 (1822ms)
+[ 46.96s] [Washer-4] Washing started for Customer-28 (5080ms)
+[ 47.90s] [Customer-21] paid at Kiosk-1
+[ 47.90s] [Customer-21] done - left the laundromat after 10.28s total.
+[ 48.22s] [Customer-22] paid at Kiosk-2
+[ 48.22s] [Customer-22] done - left the laundromat after 10.49s total.
+[ 48.36s] [Customer-24] finished drying on Dryer-3
+[ 48.36s] [Kiosk-1] Payment started for Customer-24 (1248ms)
+[ 48.69s] [Customer-26] finished washing on Washer-2
+[ 48.70s] [Dryer-1] Drying started for Customer-26 (4416ms)
+[ 48.84s] [Customer-23] finished drying on Dryer-4
+[ 48.84s] [Kiosk-2] Payment started for Customer-23 (1439ms)
+[ 49.30s] [Customer-25] finished drying on Dryer-2
+[ 49.61s] [Kiosk-1] Payment started for Customer-25 (1758ms)
+[ 49.62s] [Customer-24] paid at Kiosk-1
+[ 49.62s] [Customer-24] done - left the laundromat after 10.39s total.
+[ 49.95s] [Washer-5] Washing started for Customer-29 (4414ms)
+[ 50.28s] [Customer-23] paid at Kiosk-2
+[ 50.28s] [Customer-23] done - left the laundromat after 11.49s total.
+[ 50.39s] [Washer-6] Washing started for Customer-30 (5945ms)
+[ 50.90s] [Washer-1] Washing started for Customer-31 (5362ms)
+[ 51.35s] [Customer-27] finished washing on Washer-3
+[ 51.35s] [Dryer-3] Drying started for Customer-27 (3746ms)
+[ 51.37s] [Customer-25] paid at Kiosk-1
+[ 51.37s] [Customer-25] done - left the laundromat after 11.08s total.
+[ 51.41s] [Washer-2] Washing started for Customer-32 (5182ms)
+[ 51.85s] [Washer-3] Washing started for Customer-33 (4532ms)
+[ 52.04s] [Customer-28] finished washing on Washer-4
+[ 52.04s] [Dryer-4] Drying started for Customer-28 (4467ms)
+[ 53.11s] [Customer-26] finished drying on Dryer-1
+[ 53.11s] [Kiosk-2] Payment started for Customer-26 (1334ms)
+[ 53.53s] [Washer-4] Washing started for Customer-34 (4800ms)
+[ 54.37s] [Customer-29] finished washing on Washer-5
+[ 54.37s] [Dryer-2] Drying started for Customer-29 (3439ms)
+[ 54.45s] [Customer-26] paid at Kiosk-2
+[ 54.45s] [Customer-26] done - left the laundromat after 11.21s total.
+[ 55.09s] [Customer-27] finished drying on Dryer-3
+[ 55.09s] [Kiosk-1] Payment started for Customer-27 (1397ms)
+[ 55.92s] [Washer-5] Washing started for Customer-35 (5460ms)
+[ 56.27s] [Customer-31] finished washing on Washer-1
+[ 56.27s] [Dryer-1] Drying started for Customer-31 (4114ms)
+[ 56.27s] [Washer-1] Washing started for Customer-36 (5394ms)
+[ 56.33s] [Customer-30] finished washing on Washer-6
+[ 56.33s] [Dryer-3] Drying started for Customer-30 (3939ms)
+[ 56.38s] [Customer-33] finished washing on Washer-3
+[ 56.49s] [Customer-27] paid at Kiosk-1
+[ 56.49s] [Customer-27] done - left the laundromat after 10.75s total.
+[ 56.50s] [Customer-28] finished drying on Dryer-4
+[ 56.50s] [Dryer-4] Drying started for Customer-33 (3614ms)
+[ 56.50s] [Kiosk-2] Payment started for Customer-28 (1368ms)
+[ 56.60s] [Customer-32] finished washing on Washer-2
+[ 57.81s] [Customer-29] finished drying on Dryer-2
+[ 57.81s] [Kiosk-1] Payment started for Customer-29 (1299ms)
+[ 57.81s] [Dryer-2] Drying started for Customer-32 (3136ms)
+[ 57.88s] [Customer-28] paid at Kiosk-2
+[ 57.88s] [Customer-28] done - left the laundromat after 10.92s total.
+[ 57.99s] [Washer-6] Washing started for Customer-37 (5971ms)
+[ 58.33s] [Customer-34] finished washing on Washer-4
+[ 59.11s] [Customer-29] paid at Kiosk-1
+[ 59.11s] [Customer-29] done - left the laundromat after 9.16s total.
+[ 60.12s] [Customer-33] finished drying on Dryer-4
+[ 60.12s] [Kiosk-2] Payment started for Customer-33 (1195ms)
+[ 60.12s] [Dryer-4] Drying started for Customer-34 (4511ms)
+[ 60.27s] [Customer-30] finished drying on Dryer-3
+[ 60.27s] [Kiosk-1] Payment started for Customer-30 (1603ms)
+[ 60.38s] [Customer-31] finished drying on Dryer-1
+[ 60.50s] [Washer-3] Washing started for Customer-38 (5706ms)
+[ 60.95s] [Customer-32] finished drying on Dryer-2
+[ 61.11s] [Washer-2] Washing started for Customer-39 (5377ms)
+[ 61.32s] [Kiosk-2] Payment started for Customer-31 (1150ms)
+[ 61.32s] [Customer-33] paid at Kiosk-2
+[ 61.32s] [Customer-33] done - left the laundromat after 9.47s total.
+[ 61.38s] [Customer-35] finished washing on Washer-5
+[ 61.38s] [Dryer-3] Drying started for Customer-35 (3302ms)
+[ 61.66s] [Customer-36] finished washing on Washer-1
+[ 61.66s] [Dryer-1] Drying started for Customer-36 (4010ms)
+[ 61.88s] [Kiosk-1] Payment started for Customer-32 (1121ms)
+[ 61.88s] [Customer-30] paid at Kiosk-1
+[ 61.88s] [Customer-30] done - left the laundromat after 11.49s total.
+[ 62.47s] [Customer-31] paid at Kiosk-2
+[ 62.47s] [Customer-31] done - left the laundromat after 11.56s total.
+[ 63.00s] [Kiosk-1] !! MACHINE FAILURE mid-cycle! Payment aborted; device will self-repair shortly.
+[ 63.00s] [Customer-32] payment failed; retrying in 2000ms.
+[ 63.22s] [Washer-4] Washing started for Customer-40 (4760ms)
+[ 63.96s] [Customer-37] finished washing on Washer-6
+[ 63.96s] [Dryer-2] Drying started for Customer-37 (3363ms)
+[ 64.63s] [Customer-34] finished drying on Dryer-4
+[ 64.63s] [Kiosk-2] Payment started for Customer-34 (1837ms)
+[ 64.68s] [Customer-35] finished drying on Dryer-3
+[ 64.68s] [Kiosk-1] Payment started for Customer-35 (1821ms)
+[ 65.46s] [Washer-5] Washing started for Customer-41 (5100ms)
+[ 65.62s] [Washer-1] Washing started for Customer-42 (4127ms)
+[ 65.67s] [Customer-36] finished drying on Dryer-1
+[ 66.20s] [Customer-38] finished washing on Washer-3
+[ 66.20s] [Dryer-4] Drying started for Customer-38 (3330ms)
+[ 66.47s] [Kiosk-2] Payment started for Customer-32 (1512ms)
+[ 66.47s] [Customer-34] paid at Kiosk-2
+[ 66.47s] [Customer-34] done - left the laundromat after 12.94s total.
+[ 66.49s] [Customer-39] finished washing on Washer-2
+[ 66.49s] [Dryer-3] Drying started for Customer-39 (4944ms)
+[ 66.50s] [Customer-35] paid at Kiosk-1
+[ 66.50s] [Kiosk-1] Payment started for Customer-36 (1664ms)
+[ 66.50s] [Customer-35] done - left the laundromat after 10.58s total.
+[ 67.32s] [Customer-37] finished drying on Dryer-2
+[ 67.56s] [Washer-6] Washing started for Customer-43 (5167ms)
+[ 67.98s] [Kiosk-2] Payment started for Customer-37 (1389ms)
+[ 67.98s] [Customer-32] paid at Kiosk-2 (attempt 2)
+[ 67.98s] [Customer-32] done - left the laundromat after 16.57s total.
+[ 67.98s] [Customer-40] finished washing on Washer-4
+[ 67.98s] [Dryer-1] Drying started for Customer-40 (3062ms)
+[ 68.17s] [Customer-36] paid at Kiosk-1
+[ 68.17s] [Customer-36] done - left the laundromat after 12.01s total.
+[ 69.37s] [Customer-37] paid at Kiosk-2
+[ 69.37s] [Customer-37] done - left the laundromat after 11.39s total.
+[ 69.54s] [Customer-38] finished drying on Dryer-4
+[ 69.54s] [Kiosk-1] Payment started for Customer-38 (1373ms)
+[ 69.75s] [Customer-42] finished washing on Washer-1
+[ 69.75s] [Dryer-2] Drying started for Customer-42 (3638ms)
+[ 70.27s] [Washer-3] Washing started for Customer-44 (5698ms)
+[ 70.56s] [Customer-41] finished washing on Washer-5
+[ 70.56s] [Dryer-4] Drying started for Customer-41 (3410ms)
+[ 70.91s] [Customer-38] paid at Kiosk-1
+[ 70.91s] [Customer-38] done - left the laundromat after 10.41s total.
+[ 71.05s] [Customer-40] finished drying on Dryer-1
+[ 71.05s] [Kiosk-2] Payment started for Customer-40 (1419ms)
+[ 71.44s] [Customer-39] finished drying on Dryer-3
+[ 71.44s] [Kiosk-1] Payment started for Customer-39 (1810ms)
+[ 72.47s] [Customer-40] paid at Kiosk-2
+[ 72.47s] [Customer-40] done - left the laundromat after 9.24s total.
+[ 72.73s] [Customer-43] finished washing on Washer-6
+[ 72.73s] [Dryer-1] Drying started for Customer-43 (4316ms)
+[ 72.83s] [Washer-2] Washing started for Customer-45 (5363ms)
+[ 73.25s] [Customer-39] paid at Kiosk-1
+[ 73.25s] [Customer-39] done - left the laundromat after 12.14s total.
+[ 73.39s] [Customer-42] finished drying on Dryer-2
+[ 73.39s] [Kiosk-2] Payment started for Customer-42 (1421ms)
+[ 73.97s] [Customer-41] finished drying on Dryer-4
+[ 73.97s] [Kiosk-1] Payment started for Customer-41 (1402ms)
+[ 74.81s] [Customer-42] paid at Kiosk-2
+[ 74.81s] [Customer-42] done - left the laundromat after 9.19s total.
+[ 75.34s] [Washer-4] Washing started for Customer-46 (5973ms)
+[ 75.38s] [Customer-41] paid at Kiosk-1
+[ 75.38s] [Customer-41] done - left the laundromat after 9.92s total.
+[ 75.97s] [Customer-44] finished washing on Washer-3
+[ 75.97s] [Dryer-3] Drying started for Customer-44 (3394ms)
+[ 77.05s] [Customer-43] finished drying on Dryer-1
+[ 77.05s] [Kiosk-2] Payment started for Customer-43 (1051ms)
+[ 78.10s] [Customer-43] paid at Kiosk-2
+[ 78.10s] [Customer-43] done - left the laundromat after 10.54s total.
+[ 78.20s] [Customer-45] finished washing on Washer-2
+[ 78.20s] [Dryer-2] Drying started for Customer-45 (4192ms)
+[ 78.32s] [Washer-1] Washing started for Customer-47 (5470ms)
+[ 79.36s] [Customer-44] finished drying on Dryer-3
+[ 79.36s] [Kiosk-1] Payment started for Customer-44 (1562ms)
+[ 80.43s] [Washer-5] Washing started for Customer-48 (5206ms)
+[ 80.52s] [Washer-6] Washing started for Customer-49 (5679ms)
+[ 80.93s] [Customer-44] paid at Kiosk-1
+[ 80.93s] [Customer-44] done - left the laundromat after 10.66s total.
+[ 81.32s] [Customer-46] finished washing on Washer-4
+[ 81.32s] [Dryer-4] Drying started for Customer-46 (3047ms)
+[ 82.26s] [Washer-3] Washing started for Customer-50 (4061ms)
+[ 82.39s] [Customer-45] finished drying on Dryer-2
+[ 82.39s] [Kiosk-2] Payment started for Customer-45 (1759ms)
+[ 83.79s] [Customer-47] finished washing on Washer-1
+[ 83.79s] [Dryer-1] Drying started for Customer-47 (3715ms)
+[ 84.15s] [Customer-45] paid at Kiosk-2
+[ 84.15s] [Customer-45] done - left the laundromat after 11.32s total.
+[ 84.36s] [Customer-46] finished drying on Dryer-4
+[ 84.36s] [Kiosk-1] Payment started for Customer-46 (1192ms)
+[ 85.56s] [Customer-46] paid at Kiosk-1
+[ 85.56s] [Customer-46] done - left the laundromat after 10.22s total.
+[ 85.64s] [Customer-48] finished washing on Washer-5
+[ 85.64s] [Dryer-3] Drying started for Customer-48 (3482ms)
+[ 86.20s] [Customer-49] finished washing on Washer-6
+[ 86.20s] [Dryer-2] Drying started for Customer-49 (3857ms)
+[ 86.33s] [Customer-50] finished washing on Washer-3
+[ 86.33s] [Dryer-4] Drying started for Customer-50 (3461ms)
+[ 87.50s] [Customer-47] finished drying on Dryer-1
+[ 87.50s] [Kiosk-2] Payment started for Customer-47 (1623ms)
+[ 89.12s] [Customer-48] finished drying on Dryer-3
+[ 89.12s] [Kiosk-1] Payment started for Customer-48 (1655ms)
+[ 89.13s] [Customer-47] paid at Kiosk-2
+[ 89.13s] [Customer-47] done - left the laundromat after 10.81s total.
+[ 89.79s] [Customer-50] finished drying on Dryer-4
+[ 89.79s] [Kiosk-2] Payment started for Customer-50 (1070ms)
+[ 90.06s] [Customer-49] finished drying on Dryer-2
+[ 90.78s] [Kiosk-1] Payment started for Customer-49 (1080ms)
+[ 90.78s] [Customer-48] paid at Kiosk-1
+[ 90.78s] [Customer-48] done - left the laundromat after 10.35s total.
+[ 90.86s] [Customer-50] paid at Kiosk-2
+[ 90.86s] [Customer-50] done - left the laundromat after 8.60s total.
+[ 91.86s] [Customer-49] paid at Kiosk-1
+[ 91.86s] [Customer-49] done - left the laundromat after 11.34s total.
+[ 91.86s] {EVENT} Simulation closed after 91.9 seconds.
+--------------------------------------------------------------
+     SMART LAUNDRY - FINAL STATISTICS
+--------------------------------------------------------------
+ Total customers served      : 50
+ Average total time/customer : 10.56 s
+ Max concurrent washers used : 6
+ Max concurrent dryers used  : 4
+ Washer mid-cycle failures   : 0
+ Kiosk failures              : 1
+--------------------------------------------------------------

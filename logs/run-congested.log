@@ -1,0 +1,855 @@
+[  0.00s] {EVENT} Smart Laundry opens - 6 washers, 4 dryers, 2 kiosks, 50 customers expected. [BONUS CONGESTED SCENARIO]
+[  0.02s] [Washer-1] Washing started for Customer-01 (4075ms)
+[  1.76s] [Washer-2] Washing started for Customer-02 (5034ms)
+[  2.98s] [Washer-3] Washing started for Customer-03 (4987ms)
+[  4.10s] [Customer-01] finished washing on Washer-1
+[  4.10s] [Dryer-1] Drying started for Customer-01 (3059ms)
+[  4.39s] [Washer-4] Washing started for Customer-04 (5477ms)
+[  6.80s] [Customer-02] finished washing on Washer-2
+[  6.80s] [Dryer-2] Drying started for Customer-02 (3120ms)
+[  6.94s] [Washer-5] Washing started for Customer-05 (4144ms)
+[  7.14s] [Washer-6] Washing started for Customer-06 (5368ms)
+[  7.16s] [Customer-01] finished drying on Dryer-1
+[  7.16s] [Customer-01] !! Kiosk-1 is out of order (1 customers waiting at payment)
+[  7.97s] [Customer-03] finished washing on Washer-3
+[  7.97s] [Dryer-3] Drying started for Customer-03 (4785ms)
+[  9.16s] [Customer-01] !! Kiosk-2 is out of order (1 customers waiting at payment)
+[  9.86s] [Customer-04] finished washing on Washer-4
+[  9.86s] [Dryer-4] Drying started for Customer-04 (3100ms)
+[  9.92s] [Customer-02] finished drying on Dryer-2
+[  9.92s] [Customer-02] !! Kiosk-1 is out of order (2 customers waiting at payment)
+[ 10.12s] [Washer-1] Washing started for Customer-07 (5792ms)
+[ 10.90s] [Washer-2] Washing started for Customer-08 (5476ms)
+[ 11.08s] [Customer-05] finished washing on Washer-5
+[ 11.08s] [Dryer-1] Drying started for Customer-05 (3316ms)
+[ 11.16s] [Customer-01] !! Kiosk-2 is out of order (1 customers waiting at payment)
+[ 11.92s] [Customer-02] !! Kiosk-1 is out of order (2 customers waiting at payment)
+[ 12.31s] [Washer-3] Washing started for Customer-09 (4213ms)
+[ 12.42s] [Washer-4] Washing started for Customer-10 (5029ms)
+[ 12.50s] [Customer-06] finished washing on Washer-6
+[ 12.50s] [Dryer-2] Drying started for Customer-06 (3670ms)
+[ 12.75s] [Customer-03] finished drying on Dryer-3
+[ 12.75s] [Customer-03] !! Kiosk-2 is out of order (3 customers waiting at payment)
+[ 12.96s] [Customer-04] finished drying on Dryer-4
+[ 12.96s] [Customer-04] !! Kiosk-1 is out of order (4 customers waiting at payment)
+[ 13.16s] [Customer-01] !! Kiosk-2 is out of order (1 customers waiting at payment)
+[ 13.92s] [Customer-02] !! Kiosk-1 is out of order (2 customers waiting at payment)
+[ 14.40s] [Customer-05] finished drying on Dryer-1
+[ 14.40s] [Customer-05] !! Kiosk-2 is out of order (5 customers waiting at payment)
+[ 14.75s] [Customer-03] !! Kiosk-1 is out of order (3 customers waiting at payment)
+[ 14.95s] [Washer-5] Washing started for Customer-11 (4333ms)
+[ 14.96s] [Customer-04] !! Kiosk-2 is out of order (4 customers waiting at payment)
+[ 15.16s] [Customer-01] !! Kiosk-1 is out of order (1 customers waiting at payment)
+[ 15.92s] [Customer-07] finished washing on Washer-1
+[ 15.92s] [Dryer-3] Drying started for Customer-07 (3019ms)
+[ 15.92s] [Customer-02] !! Kiosk-2 is out of order (2 customers waiting at payment)
+[ 16.14s] [Washer-6] Washing started for Customer-12 (5597ms)
+[ 16.18s] [Customer-06] finished drying on Dryer-2
+[ 16.18s] [Customer-06] !! Kiosk-1 is out of order (6 customers waiting at payment)
+[ 16.37s] [Customer-08] finished washing on Washer-2
+[ 16.37s] [Dryer-4] Drying started for Customer-08 (4097ms)
+[ 16.40s] [Customer-05] !! Kiosk-2 is out of order (5 customers waiting at payment)
+[ 16.53s] [Customer-09] finished washing on Washer-3
+[ 16.53s] [Dryer-1] Drying started for Customer-09 (3317ms)
+[ 16.76s] [Customer-03] !! Kiosk-1 is out of order (3 customers waiting at payment)
+[ 16.97s] [Customer-04] !! Kiosk-2 is out of order (4 customers waiting at payment)
+[ 17.16s] [Customer-01] !! Kiosk-1 is out of order (1 customers waiting at payment)
+[ 17.45s] [Customer-10] finished washing on Washer-4
+[ 17.45s] [Dryer-2] Drying started for Customer-10 (3228ms)
+[ 17.92s] [Customer-02] !! Kiosk-2 is out of order (2 customers waiting at payment)
+[ 18.18s] [Customer-06] !! Kiosk-1 is out of order (6 customers waiting at payment)
+[ 18.24s] [Washer-1] Washing started for Customer-13 (4589ms)
+[ 18.40s] [Customer-05] !! Kiosk-2 is out of order (5 customers waiting at payment)
+[ 18.76s] [Customer-03] !! Kiosk-1 is out of order (3 customers waiting at payment)
+[ 18.94s] [Customer-07] finished drying on Dryer-3
+[ 18.94s] [Customer-07] !! Kiosk-2 is out of order (7 customers waiting at payment)
+[ 18.97s] [Customer-04] !! Kiosk-1 is out of order (4 customers waiting at payment)
+[ 19.06s] [Washer-2] Washing started for Customer-14 (4968ms)
+[ 19.16s] [Customer-01] !! Kiosk-2 is out of order (1 customers waiting at payment)
+[ 19.28s] [Customer-11] finished washing on Washer-5
+[ 19.28s] [Dryer-3] Drying started for Customer-11 (3542ms)
+[ 19.85s] [Customer-09] finished drying on Dryer-1
+[ 19.85s] [Customer-09] !! Kiosk-1 is out of order (8 customers waiting at payment)
+[ 19.92s] [Customer-02] !! Kiosk-2 is out of order (2 customers waiting at payment)
+[ 20.18s] [Customer-06] !! Kiosk-1 is out of order (6 customers waiting at payment)
+[ 20.40s] [Customer-05] !! Kiosk-2 is out of order (5 customers waiting at payment)
+[ 20.47s] [Customer-08] finished drying on Dryer-4
+[ 20.47s] [Customer-08] !! Kiosk-1 is out of order (9 customers waiting at payment)
+[ 20.68s] [Customer-10] finished drying on Dryer-2
+[ 20.68s] [Customer-10] !! Kiosk-2 is out of order (10 customers waiting at payment)
+[ 20.76s] [Customer-03] !! Kiosk-1 is out of order (3 customers waiting at payment)
+[ 20.94s] [Customer-07] !! Kiosk-2 is out of order (7 customers waiting at payment)
+[ 20.97s] [Customer-04] !! Kiosk-1 is out of order (4 customers waiting at payment)
+[ 21.16s] [Customer-01] !! Kiosk-2 is out of order (1 customers waiting at payment)
+[ 21.70s] [Washer-3] Washing started for Customer-15 (4985ms)
+[ 21.74s] [Customer-12] finished washing on Washer-6
+[ 21.74s] [Dryer-1] Drying started for Customer-12 (4948ms)
+[ 21.85s] [Customer-09] !! Kiosk-1 is out of order (8 customers waiting at payment)
+[ 21.93s] [Customer-02] !! Kiosk-2 is out of order (2 customers waiting at payment)
+[ 22.18s] [Customer-06] !! Kiosk-1 is out of order (6 customers waiting at payment)
+[ 22.40s] [Customer-05] !! Kiosk-2 is out of order (5 customers waiting at payment)
+[ 22.47s] [Customer-08] !! Kiosk-1 is out of order (9 customers waiting at payment)
+[ 22.68s] [Customer-10] !! Kiosk-2 is out of order (10 customers waiting at payment)
+[ 22.76s] [Customer-03] !! Kiosk-1 is out of order (3 customers waiting at payment)
+[ 22.82s] [Customer-11] finished drying on Dryer-3
+[ 22.82s] [Customer-11] !! Kiosk-2 is out of order (11 customers waiting at payment)
+[ 22.83s] [Customer-13] finished washing on Washer-1
+[ 22.83s] [Dryer-4] Drying started for Customer-13 (3076ms)
+[ 22.94s] [Customer-07] !! Kiosk-1 is out of order (7 customers waiting at payment)
+[ 22.97s] [Customer-04] !! Kiosk-2 is out of order (4 customers waiting at payment)
+[ 23.17s] [Customer-01] !! Kiosk-1 is out of order (1 customers waiting at payment)
+[ 23.85s] [Customer-09] !! Kiosk-2 is out of order (8 customers waiting at payment)
+[ 23.93s] [Customer-02] !! Kiosk-1 is out of order (2 customers waiting at payment)
+[ 24.03s] [Customer-14] finished washing on Washer-2
+[ 24.03s] [Dryer-2] Drying started for Customer-14 (4280ms)
+[ 24.18s] [Customer-06] !! Kiosk-2 is out of order (6 customers waiting at payment)
+[ 24.41s] [Customer-05] !! Kiosk-1 is out of order (5 customers waiting at payment)
+[ 24.48s] [Customer-08] !! Kiosk-2 is out of order (9 customers waiting at payment)
+[ 24.68s] [Customer-10] !! Kiosk-1 is out of order (10 customers waiting at payment)
+[ 24.69s] [Washer-4] Washing started for Customer-16 (5709ms)
+[ 24.76s] [Customer-03] !! Kiosk-2 is out of order (3 customers waiting at payment)
+[ 24.83s] [Customer-11] !! Kiosk-1 is out of order (11 customers waiting at payment)
+[ 24.94s] [Customer-07] !! Kiosk-2 is out of order (7 customers waiting at payment)
+[ 24.97s] [Customer-04] !! Kiosk-1 is out of order (4 customers waiting at payment)
+[ 25.17s] [Customer-01] !! Kiosk-2 is out of order (1 customers waiting at payment)
+[ 25.85s] [Customer-09] !! Kiosk-1 is out of order (8 customers waiting at payment)
+[ 25.91s] [Customer-13] finished drying on Dryer-4
+[ 25.91s] [Customer-13] !! Kiosk-2 is out of order (12 customers waiting at payment)
+[ 25.93s] [Customer-02] !! Kiosk-1 is out of order (2 customers waiting at payment)
+[ 26.18s] [Customer-06] !! Kiosk-2 is out of order (6 customers waiting at payment)
+[ 26.41s] [Customer-05] !! Kiosk-1 is out of order (5 customers waiting at payment)
+[ 26.48s] [Customer-08] !! Kiosk-2 is out of order (9 customers waiting at payment)
+[ 26.68s] [Customer-10] !! Kiosk-1 is out of order (10 customers waiting at payment)
+[ 26.68s] [Customer-15] finished washing on Washer-3
+[ 26.68s] [Dryer-3] Drying started for Customer-15 (4141ms)
+[ 26.69s] [Customer-12] finished drying on Dryer-1
+[ 26.69s] [Customer-12] !! Kiosk-2 is out of order (13 customers waiting at payment)
+[ 26.76s] [Customer-03] !! Kiosk-1 is out of order (3 customers waiting at payment)
+[ 26.83s] [Customer-11] !! Kiosk-2 is out of order (11 customers waiting at payment)
+[ 26.94s] [Customer-07] !! Kiosk-1 is out of order (7 customers waiting at payment)
+[ 26.97s] [Customer-04] !! Kiosk-2 is out of order (4 customers waiting at payment)
+[ 27.17s] [Customer-01] !! Kiosk-1 is out of order (1 customers waiting at payment)
+[ 27.58s] [Washer-5] Washing started for Customer-17 (4002ms)
+[ 27.85s] [Customer-09] !! Kiosk-2 is out of order (8 customers waiting at payment)
+[ 27.91s] [Customer-13] !! Kiosk-1 is out of order (12 customers waiting at payment)
+[ 27.93s] [Customer-02] !! Kiosk-2 is out of order (2 customers waiting at payment)
+[ 28.18s] [Customer-06] !! Kiosk-1 is out of order (6 customers waiting at payment)
+[ 28.31s] [Customer-14] finished drying on Dryer-2
+[ 28.31s] [Customer-14] !! Kiosk-2 is out of order (14 customers waiting at payment)
+[ 28.41s] [Customer-05] !! Kiosk-1 is out of order (5 customers waiting at payment)
+[ 28.48s] [Customer-08] !! Kiosk-2 is out of order (9 customers waiting at payment)
+[ 28.69s] [Customer-10] !! Kiosk-1 is out of order (10 customers waiting at payment)
+[ 28.69s] [Customer-12] !! Kiosk-2 is out of order (13 customers waiting at payment)
+[ 28.76s] [Customer-03] !! Kiosk-1 is out of order (3 customers waiting at payment)
+[ 28.83s] [Customer-11] !! Kiosk-2 is out of order (11 customers waiting at payment)
+[ 28.95s] [Customer-07] !! Kiosk-1 is out of order (7 customers waiting at payment)
+[ 28.98s] [Customer-04] !! Kiosk-2 is out of order (4 customers waiting at payment)
+[ 29.17s] [Customer-01] !! Kiosk-1 is out of order (1 customers waiting at payment)
+[ 29.86s] [Customer-09] !! Kiosk-2 is out of order (8 customers waiting at payment)
+[ 29.91s] [Customer-13] !! Kiosk-1 is out of order (12 customers waiting at payment)
+[ 29.93s] [Customer-02] !! Kiosk-2 is out of order (2 customers waiting at payment)
+[ 30.15s] [Washer-6] Washing started for Customer-18 (5926ms)
+[ 30.18s] [Customer-06] !! Kiosk-1 is out of order (6 customers waiting at payment)
+[ 30.31s] [Customer-14] !! Kiosk-2 is out of order (14 customers waiting at payment)
+[ 30.40s] [Customer-16] finished washing on Washer-4
+[ 30.40s] [Dryer-4] Drying started for Customer-16 (4002ms)
+[ 30.41s] [Customer-05] !! Kiosk-1 is out of order (5 customers waiting at payment)
+[ 30.48s] [Customer-08] !! Kiosk-2 is out of order (9 customers waiting at payment)
+[ 30.69s] [Customer-10] !! Kiosk-1 is out of order (10 customers waiting at payment)
+[ 30.69s] [Customer-12] !! Kiosk-2 is out of order (13 customers waiting at payment)
+[ 30.77s] [Customer-03] !! Kiosk-1 is out of order (3 customers waiting at payment)
+[ 30.83s] [Customer-15] finished drying on Dryer-3
+[ 30.83s] [Customer-15] !! Kiosk-2 is out of order (15 customers waiting at payment)
+[ 30.83s] [Customer-11] !! Kiosk-1 is out of order (11 customers waiting at payment)
+[ 30.95s] [Customer-07] !! Kiosk-2 is out of order (7 customers waiting at payment)
+[ 30.98s] [Customer-04] !! Kiosk-1 is out of order (4 customers waiting at payment)
+[ 31.17s] [Customer-01] !! Kiosk-2 is out of order (1 customers waiting at payment)
+[ 31.59s] [Customer-17] finished washing on Washer-5
+[ 31.59s] [Dryer-1] Drying started for Customer-17 (4145ms)
+[ 31.86s] [Customer-09] !! Kiosk-1 is out of order (8 customers waiting at payment)
+[ 31.91s] [Customer-13] !! Kiosk-2 is out of order (12 customers waiting at payment)
+[ 31.93s] [Customer-02] !! Kiosk-1 is out of order (2 customers waiting at payment)
+[ 32.18s] [Customer-06] !! Kiosk-2 is out of order (6 customers waiting at payment)
+[ 32.31s] [Customer-14] !! Kiosk-1 is out of order (14 customers waiting at payment)
+[ 32.41s] [Customer-05] !! Kiosk-2 is out of order (5 customers waiting at payment)
+[ 32.48s] [Customer-08] !! Kiosk-1 is out of order (9 customers waiting at payment)
+[ 32.69s] [Customer-10] !! Kiosk-2 is out of order (10 customers waiting at payment)
+[ 32.70s] [Customer-12] !! Kiosk-1 is out of order (13 customers waiting at payment)
+[ 32.77s] [Customer-03] !! Kiosk-2 is out of order (3 customers waiting at payment)
+[ 32.83s] [Customer-15] !! Kiosk-1 is out of order (15 customers waiting at payment)
+[ 32.83s] [Customer-11] !! Kiosk-2 is out of order (11 customers waiting at payment)
+[ 32.95s] [Customer-07] !! Kiosk-1 is out of order (7 customers waiting at payment)
+[ 32.98s] [Customer-04] !! Kiosk-2 is out of order (4 customers waiting at payment)
+[ 33.13s] [Washer-1] Washing started for Customer-19 (4282ms)
+[ 33.17s] [Customer-01] !! Kiosk-1 is out of order (1 customers waiting at payment)
+[ 33.86s] [Customer-09] !! Kiosk-2 is out of order (8 customers waiting at payment)
+[ 33.91s] [Customer-13] !! Kiosk-1 is out of order (12 customers waiting at payment)
+[ 33.93s] [Customer-02] !! Kiosk-2 is out of order (2 customers waiting at payment)
+[ 33.97s] [Washer-2] Washing started for Customer-20 (5515ms)
+[ 34.18s] [Customer-06] !! Kiosk-1 is out of order (6 customers waiting at payment)
+[ 34.31s] [Customer-14] !! Kiosk-2 is out of order (14 customers waiting at payment)
+[ 34.40s] [Customer-16] finished drying on Dryer-4
+[ 34.40s] [Customer-16] !! Kiosk-1 is out of order (16 customers waiting at payment)
+[ 34.41s] [Customer-05] !! Kiosk-2 is out of order (5 customers waiting at payment)
+[ 34.48s] [Customer-08] !! Kiosk-1 is out of order (9 customers waiting at payment)
+[ 34.69s] [Customer-10] !! Kiosk-2 is out of order (10 customers waiting at payment)
+[ 34.70s] [Customer-12] !! Kiosk-1 is out of order (13 customers waiting at payment)
+[ 34.77s] [Customer-03] !! Kiosk-2 is out of order (3 customers waiting at payment)
+[ 34.83s] [Customer-15] !! Kiosk-1 is out of order (15 customers waiting at payment)
+[ 34.83s] [Customer-11] !! Kiosk-2 is out of order (11 customers waiting at payment)
+[ 34.95s] [Customer-07] !! Kiosk-1 is out of order (7 customers waiting at payment)
+[ 34.98s] [Customer-04] !! Kiosk-2 is out of order (4 customers waiting at payment)
+[ 35.17s] [Customer-01] !! Kiosk-1 is out of order (1 customers waiting at payment)
+[ 35.73s] [Customer-17] finished drying on Dryer-1
+[ 35.73s] [Customer-17] !! Kiosk-2 is out of order (17 customers waiting at payment)
+[ 35.86s] [Customer-09] !! Kiosk-1 is out of order (8 customers waiting at payment)
+[ 35.91s] [Customer-13] !! Kiosk-2 is out of order (12 customers waiting at payment)
+[ 35.94s] [Customer-02] !! Kiosk-1 is out of order (2 customers waiting at payment)
+[ 36.08s] [Customer-18] finished washing on Washer-6
+[ 36.08s] [Dryer-2] Drying started for Customer-18 (4313ms)
+[ 36.18s] [Customer-06] !! Kiosk-2 is out of order (6 customers waiting at payment)
+[ 36.31s] [Customer-14] !! Kiosk-1 is out of order (14 customers waiting at payment)
+[ 36.41s] [Customer-16] !! Kiosk-2 is out of order (16 customers waiting at payment)
+[ 36.41s] [Customer-05] !! Kiosk-1 is out of order (5 customers waiting at payment)
+[ 36.47s] [Washer-3] Washing started for Customer-21 (4819ms)
+[ 36.49s] [Customer-08] !! Kiosk-2 is out of order (9 customers waiting at payment)
+[ 36.66s] [Washer-4] Washing started for Customer-22 (5330ms)
+[ 36.69s] [Customer-10] !! Kiosk-1 is out of order (10 customers waiting at payment)
+[ 36.70s] [Customer-12] !! Kiosk-2 is out of order (13 customers waiting at payment)
+[ 36.77s] [Customer-03] !! Kiosk-1 is out of order (3 customers waiting at payment)
+[ 36.83s] [Customer-15] !! Kiosk-2 is out of order (15 customers waiting at payment)
+[ 36.83s] [Customer-11] !! Kiosk-1 is out of order (11 customers waiting at payment)
+[ 36.95s] [Customer-07] !! Kiosk-2 is out of order (7 customers waiting at payment)
+[ 36.98s] [Customer-04] !! Kiosk-1 is out of order (4 customers waiting at payment)
+[ 37.18s] [Customer-01] !! Kiosk-2 is out of order (1 customers waiting at payment)
+[ 37.41s] [Customer-19] finished washing on Washer-1
+[ 37.41s] [Dryer-3] Drying started for Customer-19 (4809ms)
+[ 37.73s] [Customer-17] !! Kiosk-1 is out of order (17 customers waiting at payment)
+[ 37.86s] [Customer-09] !! Kiosk-2 is out of order (8 customers waiting at payment)
+[ 37.92s] [Customer-13] !! Kiosk-1 is out of order (12 customers waiting at payment)
+[ 37.94s] [Customer-02] !! Kiosk-2 is out of order (2 customers waiting at payment)
+[ 38.19s] [Customer-06] !! Kiosk-1 is out of order (6 customers waiting at payment)
+[ 38.31s] [Customer-14] !! Kiosk-2 is out of order (14 customers waiting at payment)
+[ 38.41s] [Customer-16] !! Kiosk-1 is out of order (16 customers waiting at payment)
+[ 38.41s] [Customer-05] !! Kiosk-2 is out of order (5 customers waiting at payment)
+[ 38.49s] [Customer-08] !! Kiosk-1 is out of order (9 customers waiting at payment)
+[ 38.65s] [Washer-5] Washing started for Customer-23 (4066ms)
+[ 38.69s] [Customer-10] !! Kiosk-2 is out of order (10 customers waiting at payment)
+[ 38.70s] [Customer-12] !! Kiosk-1 is out of order (13 customers waiting at payment)
+[ 38.77s] [Customer-03] !! Kiosk-2 is out of order (3 customers waiting at payment)
+[ 38.83s] [Customer-15] !! Kiosk-1 is out of order (15 customers waiting at payment)
+[ 38.83s] [Customer-11] !! Kiosk-2 is out of order (11 customers waiting at payment)
+[ 38.95s] [Customer-07] !! Kiosk-1 is out of order (7 customers waiting at payment)
+[ 38.98s] [Customer-04] !! Kiosk-2 is out of order (4 customers waiting at payment)
+[ 39.18s] [Customer-01] !! Kiosk-1 is out of order (1 customers waiting at payment)
+[ 39.49s] [Customer-20] finished washing on Washer-2
+[ 39.49s] [Dryer-4] Drying started for Customer-20 (3190ms)
+[ 39.63s] [Washer-6] Washing started for Customer-24 (4672ms)
+[ 39.73s] [Customer-17] !! Kiosk-2 is out of order (17 customers waiting at payment)
+[ 39.86s] [Customer-09] !! Kiosk-1 is out of order (8 customers waiting at payment)
+[ 39.92s] [Customer-13] !! Kiosk-2 is out of order (12 customers waiting at payment)
+[ 39.94s] [Customer-02] !! Kiosk-1 is out of order (2 customers waiting at payment)
+[ 39.97s] [Washer-1] Washing started for Customer-25 (5918ms)
+[ 40.19s] [Customer-06] !! Kiosk-2 is out of order (6 customers waiting at payment)
+[ 40.32s] [Customer-14] !! Kiosk-1 is out of order (14 customers waiting at payment)
+[ 40.39s] [Customer-18] finished drying on Dryer-2
+[ 40.39s] [Customer-18] !! Kiosk-2 is out of order (18 customers waiting at payment)
+[ 40.41s] [Customer-16] !! Kiosk-1 is out of order (16 customers waiting at payment)
+[ 40.41s] [Customer-05] !! Kiosk-2 is out of order (5 customers waiting at payment)
+[ 40.49s] [Customer-08] !! Kiosk-1 is out of order (9 customers waiting at payment)
+[ 40.69s] [Customer-10] !! Kiosk-2 is out of order (10 customers waiting at payment)
+[ 40.70s] [Customer-12] !! Kiosk-1 is out of order (13 customers waiting at payment)
+[ 40.77s] [Customer-03] !! Kiosk-2 is out of order (3 customers waiting at payment)
+[ 40.83s] [Customer-15] !! Kiosk-1 is out of order (15 customers waiting at payment)
+[ 40.83s] [Customer-11] !! Kiosk-2 is out of order (11 customers waiting at payment)
+[ 40.95s] [Customer-07] !! Kiosk-1 is out of order (7 customers waiting at payment)
+[ 40.98s] [Customer-04] !! Kiosk-2 is out of order (4 customers waiting at payment)
+[ 41.18s] [Customer-01] !! Kiosk-1 is out of order (1 customers waiting at payment)
+[ 41.29s] [Customer-21] finished washing on Washer-3
+[ 41.29s] [Dryer-1] Drying started for Customer-21 (3923ms)
+[ 41.74s] [Customer-17] !! Kiosk-2 is out of order (17 customers waiting at payment)
+[ 41.86s] [Customer-09] !! Kiosk-1 is out of order (8 customers waiting at payment)
+[ 41.92s] [Customer-13] !! Kiosk-2 is out of order (12 customers waiting at payment)
+[ 41.94s] [Customer-02] !! Kiosk-1 is out of order (2 customers waiting at payment)
+[ 41.99s] [Customer-22] finished washing on Washer-4
+[ 41.99s] [Dryer-2] Drying started for Customer-22 (4434ms)
+[ 42.19s] [Customer-06] !! Kiosk-2 is out of order (6 customers waiting at payment)
+[ 42.22s] [Customer-19] finished drying on Dryer-3
+[ 42.22s] [Customer-19] !! Kiosk-1 is out of order (19 customers waiting at payment)
+[ 42.32s] [Customer-14] !! Kiosk-2 is out of order (14 customers waiting at payment)
+[ 42.39s] [Customer-18] !! Kiosk-1 is out of order (18 customers waiting at payment)
+[ 42.41s] [Customer-16] !! Kiosk-2 is out of order (16 customers waiting at payment)
+[ 42.41s] [Customer-05] !! Kiosk-1 is out of order (5 customers waiting at payment)
+[ 42.49s] [Customer-08] !! Kiosk-2 is out of order (9 customers waiting at payment)
+[ 42.68s] [Customer-20] finished drying on Dryer-4
+[ 42.68s] [Customer-20] !! Kiosk-1 is out of order (20 customers waiting at payment)
+[ 42.69s] [Customer-10] !! Kiosk-2 is out of order (10 customers waiting at payment)
+[ 42.70s] [Customer-12] !! Kiosk-1 is out of order (13 customers waiting at payment)
+[ 42.72s] [Customer-23] finished washing on Washer-5
+[ 42.72s] [Dryer-3] Drying started for Customer-23 (4833ms)
+[ 42.77s] [Customer-03] !! Kiosk-2 is out of order (3 customers waiting at payment)
+[ 42.83s] [Customer-15] !! Kiosk-1 is out of order (15 customers waiting at payment)
+[ 42.83s] [Customer-11] !! Kiosk-2 is out of order (11 customers waiting at payment)
+[ 42.90s] [Washer-2] Washing started for Customer-26 (5699ms)
+[ 42.95s] [Customer-07] !! Kiosk-1 is out of order (7 customers waiting at payment)
+[ 42.98s] [Customer-04] !! Kiosk-2 is out of order (4 customers waiting at payment)
+[ 43.18s] [Customer-01] !! Kiosk-1 is out of order (1 customers waiting at payment)
+[ 43.33s] [Washer-3] Washing started for Customer-27 (5902ms)
+[ 43.74s] [Customer-17] !! Kiosk-2 is out of order (17 customers waiting at payment)
+[ 43.86s] [Customer-09] !! Kiosk-1 is out of order (8 customers waiting at payment)
+[ 43.92s] [Customer-13] !! Kiosk-2 is out of order (12 customers waiting at payment)
+[ 43.94s] [Customer-02] !! Kiosk-1 is out of order (2 customers waiting at payment)
+[ 44.19s] [Customer-06] !! Kiosk-2 is out of order (6 customers waiting at payment)
+[ 44.22s] [Customer-19] !! Kiosk-1 is out of order (19 customers waiting at payment)
+[ 44.30s] [Customer-24] finished washing on Washer-6
+[ 44.30s] [Dryer-4] Drying started for Customer-24 (3064ms)
+[ 44.32s] [Customer-14] !! Kiosk-2 is out of order (14 customers waiting at payment)
+[ 44.39s] [Customer-18] !! Kiosk-1 is out of order (18 customers waiting at payment)
+[ 44.41s] [Customer-16] !! Kiosk-2 is out of order (16 customers waiting at payment)
+[ 44.42s] [Customer-05] !! Kiosk-1 is out of order (5 customers waiting at payment)
+[ 44.49s] [Customer-08] !! Kiosk-2 is out of order (9 customers waiting at payment)
+[ 44.68s] [Customer-20] !! Kiosk-1 is out of order (20 customers waiting at payment)
+[ 44.69s] [Customer-10] !! Kiosk-2 is out of order (10 customers waiting at payment)
+[ 44.70s] [Customer-12] !! Kiosk-1 is out of order (13 customers waiting at payment)
+[ 44.77s] [Customer-03] !! Kiosk-2 is out of order (3 customers waiting at payment)
+[ 44.83s] [Customer-15] !! Kiosk-1 is out of order (15 customers waiting at payment)
+[ 44.83s] [Customer-11] !! Kiosk-2 is out of order (11 customers waiting at payment)
+[ 44.95s] [Customer-07] !! Kiosk-1 is out of order (7 customers waiting at payment)
+[ 44.99s] [Customer-04] !! Kiosk-2 is out of order (4 customers waiting at payment)
+[ 45.18s] [Customer-01] !! Kiosk-1 is out of order (1 customers waiting at payment)
+[ 45.21s] [Customer-21] finished drying on Dryer-1
+[ 45.21s] [Customer-21] !! Kiosk-2 is out of order (21 customers waiting at payment)
+[ 45.74s] [Customer-17] !! Kiosk-1 is out of order (17 customers waiting at payment)
+[ 45.87s] [Customer-09] !! Kiosk-2 is out of order (8 customers waiting at payment)
+[ 45.89s] [Customer-25] finished washing on Washer-1
+[ 45.89s] [Dryer-1] Drying started for Customer-25 (3459ms)
+[ 45.92s] [Customer-13] !! Kiosk-1 is out of order (12 customers waiting at payment)
+[ 45.94s] [Customer-02] !! Kiosk-2 is out of order (2 customers waiting at payment)
+[ 46.19s] [Customer-06] !! Kiosk-1 is out of order (6 customers waiting at payment)
+[ 46.22s] [Customer-19] !! Kiosk-2 is out of order (19 customers waiting at payment)
+[ 46.26s] [Washer-4] Washing started for Customer-28 (5762ms)
+[ 46.32s] [Customer-14] !! Kiosk-1 is out of order (14 customers waiting at payment)
+[ 46.39s] [Customer-18] !! Kiosk-2 is out of order (18 customers waiting at payment)
+[ 46.41s] [Customer-16] !! Kiosk-1 is out of order (16 customers waiting at payment)
+[ 46.42s] [Customer-05] !! Kiosk-2 is out of order (5 customers waiting at payment)
+[ 46.42s] [Customer-22] finished drying on Dryer-2
+[ 46.42s] [Customer-22] !! Kiosk-1 is out of order (22 customers waiting at payment)
+[ 46.49s] [Customer-08] !! Kiosk-2 is out of order (9 customers waiting at payment)
+[ 46.68s] [Customer-20] !! Kiosk-1 is out of order (20 customers waiting at payment)
+[ 46.69s] [Customer-10] !! Kiosk-2 is out of order (10 customers waiting at payment)
+[ 46.70s] [Customer-12] !! Kiosk-1 is out of order (13 customers waiting at payment)
+[ 46.77s] [Customer-03] !! Kiosk-2 is out of order (3 customers waiting at payment)
+[ 46.83s] [Customer-15] !! Kiosk-1 is out of order (15 customers waiting at payment)
+[ 46.84s] [Customer-11] !! Kiosk-2 is out of order (11 customers waiting at payment)
+[ 46.95s] [Customer-07] !! Kiosk-1 is out of order (7 customers waiting at payment)
+[ 46.99s] [Customer-04] !! Kiosk-2 is out of order (4 customers waiting at payment)
+[ 47.18s] [Customer-01] !! Kiosk-1 is out of order (1 customers waiting at payment)
+[ 47.21s] [Customer-21] !! Kiosk-2 is out of order (21 customers waiting at payment)
+[ 47.37s] [Customer-24] finished drying on Dryer-4
+[ 47.37s] [Customer-24] !! Kiosk-1 is out of order (23 customers waiting at payment)
+[ 47.55s] [Customer-23] finished drying on Dryer-3
+[ 47.55s] [Customer-23] !! Kiosk-2 is out of order (24 customers waiting at payment)
+[ 47.74s] [Customer-17] !! Kiosk-1 is out of order (17 customers waiting at payment)
+[ 47.87s] [Customer-09] !! Kiosk-2 is out of order (8 customers waiting at payment)
+[ 47.92s] [Customer-13] !! Kiosk-1 is out of order (12 customers waiting at payment)
+[ 47.94s] [Customer-02] !! Kiosk-2 is out of order (2 customers waiting at payment)
+[ 48.19s] [Customer-06] !! Kiosk-1 is out of order (6 customers waiting at payment)
+[ 48.22s] [Customer-19] !! Kiosk-2 is out of order (19 customers waiting at payment)
+[ 48.32s] [Customer-14] !! Kiosk-1 is out of order (14 customers waiting at payment)
+[ 48.40s] [Customer-18] !! Kiosk-2 is out of order (18 customers waiting at payment)
+[ 48.41s] [Customer-16] !! Kiosk-1 is out of order (16 customers waiting at payment)
+[ 48.42s] [Customer-05] !! Kiosk-2 is out of order (5 customers waiting at payment)
+[ 48.43s] [Customer-22] !! Kiosk-1 is out of order (22 customers waiting at payment)
+[ 48.49s] [Customer-08] !! Kiosk-2 is out of order (9 customers waiting at payment)
+[ 48.60s] [Customer-26] finished washing on Washer-2
+[ 48.60s] [Dryer-2] Drying started for Customer-26 (4401ms)
+[ 48.68s] [Customer-20] !! Kiosk-1 is out of order (20 customers waiting at payment)
+[ 48.70s] [Customer-10] !! Kiosk-2 is out of order (10 customers waiting at payment)
+[ 48.70s] [Customer-12] !! Kiosk-1 is out of order (13 customers waiting at payment)
+[ 48.78s] [Customer-03] !! Kiosk-2 is out of order (3 customers waiting at payment)
+[ 48.84s] [Customer-15] !! Kiosk-1 is out of order (15 customers waiting at payment)
+[ 48.84s] [Customer-11] !! Kiosk-2 is out of order (11 customers waiting at payment)
+[ 48.94s] [Washer-5] Washing started for Customer-29 (4616ms)
+[ 48.96s] [Customer-07] !! Kiosk-1 is out of order (7 customers waiting at payment)
+[ 48.99s] [Customer-04] !! Kiosk-2 is out of order (4 customers waiting at payment)
+[ 49.18s] [Customer-01] !! Kiosk-1 is out of order (1 customers waiting at payment)
+[ 49.21s] [Customer-21] !! Kiosk-2 is out of order (21 customers waiting at payment)
+[ 49.24s] [Customer-27] finished washing on Washer-3
+[ 49.24s] [Dryer-4] Drying started for Customer-27 (4232ms)
+[ 49.35s] [Customer-25] finished drying on Dryer-1
+[ 49.35s] [Customer-25] !! Kiosk-1 is out of order (25 customers waiting at payment)
+[ 49.37s] [Customer-24] !! Kiosk-2 is out of order (23 customers waiting at payment)
+[ 49.55s] [Customer-23] !! Kiosk-1 is out of order (24 customers waiting at payment)
+[ 49.74s] [Customer-17] !! Kiosk-2 is out of order (17 customers waiting at payment)
+[ 49.87s] [Customer-09] !! Kiosk-1 is out of order (8 customers waiting at payment)
+[ 49.92s] [Customer-13] !! Kiosk-2 is out of order (12 customers waiting at payment)
+[ 49.95s] [Customer-02] !! Kiosk-1 is out of order (2 customers waiting at payment)
+[ 50.19s] [Customer-06] !! Kiosk-2 is out of order (6 customers waiting at payment)
+[ 50.22s] [Customer-19] !! Kiosk-1 is out of order (19 customers waiting at payment)
+[ 50.32s] [Customer-14] !! Kiosk-2 is out of order (14 customers waiting at payment)
+[ 50.40s] [Customer-18] !! Kiosk-1 is out of order (18 customers waiting at payment)
+[ 50.41s] [Customer-16] !! Kiosk-2 is out of order (16 customers waiting at payment)
+[ 50.42s] [Customer-05] !! Kiosk-1 is out of order (5 customers waiting at payment)
+[ 50.43s] [Customer-22] !! Kiosk-2 is out of order (22 customers waiting at payment)
+[ 50.49s] [Customer-08] !! Kiosk-1 is out of order (9 customers waiting at payment)
+[ 50.68s] [Customer-20] !! Kiosk-2 is out of order (20 customers waiting at payment)
+[ 50.70s] [Customer-10] !! Kiosk-1 is out of order (10 customers waiting at payment)
+[ 50.70s] [Customer-12] !! Kiosk-2 is out of order (13 customers waiting at payment)
+[ 50.78s] [Customer-03] !! Kiosk-1 is out of order (3 customers waiting at payment)
+[ 50.84s] [Customer-15] !! Kiosk-2 is out of order (15 customers waiting at payment)
+[ 50.84s] [Customer-11] !! Kiosk-1 is out of order (11 customers waiting at payment)
+[ 50.96s] [Customer-07] !! Kiosk-2 is out of order (7 customers waiting at payment)
+[ 50.99s] [Customer-04] !! Kiosk-1 is out of order (4 customers waiting at payment)
+[ 51.18s] [Customer-01] !! Kiosk-2 is out of order (1 customers waiting at payment)
+[ 51.21s] [Customer-21] !! Kiosk-1 is out of order (21 customers waiting at payment)
+[ 51.35s] [Customer-25] !! Kiosk-2 is out of order (25 customers waiting at payment)
+[ 51.37s] [Customer-24] !! Kiosk-1 is out of order (23 customers waiting at payment)
+[ 51.39s] [Washer-6] Washing started for Customer-30 (4799ms)
+[ 51.55s] [Customer-23] !! Kiosk-2 is out of order (24 customers waiting at payment)
+[ 51.74s] [Customer-17] !! Kiosk-1 is out of order (17 customers waiting at payment)
+[ 51.87s] [Customer-09] !! Kiosk-2 is out of order (8 customers waiting at payment)
+[ 51.92s] [Customer-13] !! Kiosk-1 is out of order (12 customers waiting at payment)
+[ 51.95s] [Customer-02] !! Kiosk-2 is out of order (2 customers waiting at payment)
+[ 52.03s] [Washer-4] !! MACHINE FAILURE mid-cycle! Washing aborted; device will self-repair shortly.
+[ 52.03s] [Customer-28] will retry washing - rejoining the washer queue.
+[ 52.03s] [Washer-1] Washing started for Customer-28 (4355ms)
+[ 52.19s] [Customer-06] !! Kiosk-1 is out of order (6 customers waiting at payment)
+[ 52.23s] [Customer-19] !! Kiosk-2 is out of order (19 customers waiting at payment)
+[ 52.32s] [Customer-14] !! Kiosk-1 is out of order (14 customers waiting at payment)
+[ 52.40s] [Customer-18] !! Kiosk-2 is out of order (18 customers waiting at payment)
+[ 52.42s] [Customer-16] !! Kiosk-1 is out of order (16 customers waiting at payment)
+[ 52.42s] [Customer-05] !! Kiosk-2 is out of order (5 customers waiting at payment)
+[ 52.43s] [Customer-22] !! Kiosk-1 is out of order (22 customers waiting at payment)
+[ 52.49s] [Customer-08] !! Kiosk-2 is out of order (9 customers waiting at payment)
+[ 52.68s] [Customer-20] !! Kiosk-1 is out of order (20 customers waiting at payment)
+[ 52.70s] [Customer-10] !! Kiosk-2 is out of order (10 customers waiting at payment)
+[ 52.71s] [Customer-12] !! Kiosk-1 is out of order (13 customers waiting at payment)
+[ 52.78s] [Customer-03] !! Kiosk-2 is out of order (3 customers waiting at payment)
+[ 52.84s] [Customer-15] !! Kiosk-1 is out of order (15 customers waiting at payment)
+[ 52.84s] [Customer-11] !! Kiosk-2 is out of order (11 customers waiting at payment)
+[ 52.95s] [Washer-2] Washing started for Customer-31 (4176ms)
+[ 52.96s] [Customer-07] !! Kiosk-1 is out of order (7 customers waiting at payment)
+[ 52.99s] [Customer-04] !! Kiosk-2 is out of order (4 customers waiting at payment)
+[ 53.00s] [Customer-26] finished drying on Dryer-2
+[ 53.00s] [Customer-26] !! Kiosk-1 is out of order (26 customers waiting at payment)
+[ 53.18s] [Customer-01] !! Kiosk-2 is out of order (1 customers waiting at payment)
+[ 53.21s] [Customer-21] !! Kiosk-1 is out of order (21 customers waiting at payment)
+[ 53.35s] [Customer-25] !! Kiosk-2 is out of order (25 customers waiting at payment)
+[ 53.37s] [Customer-24] !! Kiosk-1 is out of order (23 customers waiting at payment)
+[ 53.47s] [Customer-27] finished drying on Dryer-4
+[ 53.47s] [Customer-27] !! Kiosk-2 is out of order (27 customers waiting at payment)
+[ 53.53s] {EVENT} Washer-4 repaired and back in service.
+[ 53.55s] [Customer-23] !! Kiosk-1 is out of order (24 customers waiting at payment)
+[ 53.56s] [Customer-29] finished washing on Washer-5
+[ 53.56s] [Dryer-3] Drying started for Customer-29 (4657ms)
+[ 53.74s] [Customer-17] !! Kiosk-2 is out of order (17 customers waiting at payment)
+[ 53.87s] [Customer-09] !! Kiosk-1 is out of order (8 customers waiting at payment)
+[ 53.93s] [Customer-13] !! Kiosk-2 is out of order (12 customers waiting at payment)
+[ 53.95s] [Customer-02] !! Kiosk-1 is out of order (2 customers waiting at payment)
+[ 54.20s] [Customer-06] !! Kiosk-2 is out of order (6 customers waiting at payment)
+[ 54.23s] [Customer-19] !! Kiosk-1 is out of order (19 customers waiting at payment)
+[ 54.27s] [Washer-3] Washing started for Customer-32 (5354ms)
+[ 54.32s] [Customer-14] !! Kiosk-2 is out of order (14 customers waiting at payment)
+[ 54.40s] [Customer-18] !! Kiosk-1 is out of order (18 customers waiting at payment)
+[ 54.42s] [Customer-16] !! Kiosk-2 is out of order (16 customers waiting at payment)
+[ 54.42s] [Customer-05] !! Kiosk-1 is out of order (5 customers waiting at payment)
+[ 54.43s] [Customer-22] !! Kiosk-2 is out of order (22 customers waiting at payment)
+[ 54.50s] [Customer-08] !! Kiosk-1 is out of order (9 customers waiting at payment)
+[ 54.69s] [Customer-20] !! Kiosk-2 is out of order (20 customers waiting at payment)
+[ 54.70s] [Customer-10] !! Kiosk-1 is out of order (10 customers waiting at payment)
+[ 54.71s] [Customer-12] !! Kiosk-2 is out of order (13 customers waiting at payment)
+[ 54.78s] [Customer-03] !! Kiosk-1 is out of order (3 customers waiting at payment)
+[ 54.84s] [Customer-15] !! Kiosk-2 is out of order (15 customers waiting at payment)
+[ 54.84s] [Customer-11] !! Kiosk-1 is out of order (11 customers waiting at payment)
+[ 54.96s] [Customer-07] !! Kiosk-2 is out of order (7 customers waiting at payment)
+[ 54.99s] [Customer-04] !! Kiosk-1 is out of order (4 customers waiting at payment)
+[ 55.00s] [Customer-26] !! Kiosk-2 is out of order (26 customers waiting at payment)
+[ 55.09s] [Washer-4] Washing started for Customer-33 (5651ms)
+[ 55.18s] [Customer-01] !! Kiosk-1 is out of order (1 customers waiting at payment)
+[ 55.22s] [Customer-21] !! Kiosk-2 is out of order (21 customers waiting at payment)
+[ 55.35s] [Customer-25] !! Kiosk-1 is out of order (25 customers waiting at payment)
+[ 55.37s] [Customer-24] !! Kiosk-2 is out of order (23 customers waiting at payment)
+[ 55.47s] [Customer-27] !! Kiosk-1 is out of order (27 customers waiting at payment)
+[ 55.55s] [Customer-23] !! Kiosk-2 is out of order (24 customers waiting at payment)
+[ 55.68s] [Washer-5] Washing started for Customer-34 (5160ms)
+[ 55.74s] [Customer-17] !! Kiosk-1 is out of order (17 customers waiting at payment)
+[ 55.87s] [Customer-09] !! Kiosk-2 is out of order (8 customers waiting at payment)
+[ 55.93s] [Customer-13] !! Kiosk-1 is out of order (12 customers waiting at payment)
+[ 55.95s] [Customer-02] !! Kiosk-2 is out of order (2 customers waiting at payment)
+[ 56.19s] [Customer-30] finished washing on Washer-6
+[ 56.19s] [Dryer-1] Drying started for Customer-30 (3616ms)
+[ 56.20s] [Customer-06] !! Kiosk-1 is out of order (6 customers waiting at payment)
+[ 56.23s] [Customer-19] !! Kiosk-2 is out of order (19 customers waiting at payment)
+[ 56.32s] [Customer-14] !! Kiosk-1 is out of order (14 customers waiting at payment)
+[ 56.39s] [Customer-28] finished washing on Washer-1
+[ 56.39s] [Dryer-2] Drying started for Customer-28 (3503ms)
+[ 56.40s] [Customer-18] !! Kiosk-2 is out of order (18 customers waiting at payment)
+[ 56.42s] [Customer-16] !! Kiosk-1 is out of order (16 customers waiting at payment)
+[ 56.42s] [Customer-05] !! Kiosk-2 is out of order (5 customers waiting at payment)
+[ 56.43s] [Customer-22] !! Kiosk-1 is out of order (22 customers waiting at payment)
+[ 56.50s] [Customer-08] !! Kiosk-2 is out of order (9 customers waiting at payment)
+[ 56.69s] [Customer-20] !! Kiosk-1 is out of order (20 customers waiting at payment)
+[ 56.70s] [Customer-10] !! Kiosk-2 is out of order (10 customers waiting at payment)
+[ 56.71s] [Customer-12] !! Kiosk-1 is out of order (13 customers waiting at payment)
+[ 56.78s] [Customer-03] !! Kiosk-2 is out of order (3 customers waiting at payment)
+[ 56.84s] [Customer-15] !! Kiosk-1 is out of order (15 customers waiting at payment)
+[ 56.84s] [Customer-11] !! Kiosk-2 is out of order (11 customers waiting at payment)
+[ 56.96s] [Customer-07] !! Kiosk-1 is out of order (7 customers waiting at payment)
+[ 56.99s] [Customer-04] !! Kiosk-2 is out of order (4 customers waiting at payment)
+[ 57.00s] [Customer-26] !! Kiosk-1 is out of order (26 customers waiting at payment)
+[ 57.12s] [Customer-31] finished washing on Washer-2
+[ 57.12s] [Dryer-4] Drying started for Customer-31 (3064ms)
+[ 57.18s] [Customer-01] !! Kiosk-2 is out of order (1 customers waiting at payment)
+[ 57.22s] [Customer-21] !! Kiosk-1 is out of order (21 customers waiting at payment)
+[ 57.35s] [Customer-25] !! Kiosk-2 is out of order (25 customers waiting at payment)
+[ 57.38s] [Customer-24] !! Kiosk-1 is out of order (23 customers waiting at payment)
+[ 57.47s] [Customer-27] !! Kiosk-2 is out of order (27 customers waiting at payment)
+[ 57.55s] [Customer-23] !! Kiosk-1 is out of order (24 customers waiting at payment)
+[ 57.59s] [Washer-6] Washing started for Customer-35 (5134ms)
+[ 57.74s] [Customer-17] !! Kiosk-2 is out of order (17 customers waiting at payment)
+[ 57.87s] [Customer-09] !! Kiosk-1 is out of order (8 customers waiting at payment)
+[ 57.93s] [Customer-13] !! Kiosk-2 is out of order (12 customers waiting at payment)
+[ 57.95s] [Customer-02] !! Kiosk-1 is out of order (2 customers waiting at payment)
+[ 58.20s] [Customer-06] !! Kiosk-2 is out of order (6 customers waiting at payment)
+[ 58.21s] [Customer-29] finished drying on Dryer-3
+[ 58.21s] [Customer-29] !! Kiosk-1 is out of order (28 customers waiting at payment)
+[ 58.23s] [Customer-19] !! Kiosk-2 is out of order (19 customers waiting at payment)
+[ 58.32s] [Customer-14] !! Kiosk-1 is out of order (14 customers waiting at payment)
+[ 58.40s] [Customer-18] !! Kiosk-2 is out of order (18 customers waiting at payment)
+[ 58.42s] [Customer-16] !! Kiosk-1 is out of order (16 customers waiting at payment)
+[ 58.42s] [Customer-05] !! Kiosk-2 is out of order (5 customers waiting at payment)
+[ 58.43s] [Customer-22] !! Kiosk-1 is out of order (22 customers waiting at payment)
+[ 58.50s] [Customer-08] !! Kiosk-2 is out of order (9 customers waiting at payment)
+[ 58.69s] [Customer-20] !! Kiosk-1 is out of order (20 customers waiting at payment)
+[ 58.70s] [Customer-10] !! Kiosk-2 is out of order (10 customers waiting at payment)
+[ 58.71s] [Customer-12] !! Kiosk-1 is out of order (13 customers waiting at payment)
+[ 58.78s] [Customer-03] !! Kiosk-2 is out of order (3 customers waiting at payment)
+[ 58.84s] [Customer-15] !! Kiosk-1 is out of order (15 customers waiting at payment)
+[ 58.84s] [Customer-11] !! Kiosk-2 is out of order (11 customers waiting at payment)
+[ 58.96s] [Customer-07] !! Kiosk-1 is out of order (7 customers waiting at payment)
+[ 58.99s] [Customer-04] !! Kiosk-2 is out of order (4 customers waiting at payment)
+[ 59.00s] [Customer-26] !! Kiosk-1 is out of order (26 customers waiting at payment)
+[ 59.18s] [Customer-01] !! Kiosk-2 is out of order (1 customers waiting at payment)
+[ 59.22s] [Customer-21] !! Kiosk-1 is out of order (21 customers waiting at payment)
+[ 59.35s] [Customer-25] !! Kiosk-2 is out of order (25 customers waiting at payment)
+[ 59.38s] [Customer-24] !! Kiosk-1 is out of order (23 customers waiting at payment)
+[ 59.48s] [Customer-27] !! Kiosk-2 is out of order (27 customers waiting at payment)
+[ 59.55s] [Customer-23] !! Kiosk-1 is out of order (24 customers waiting at payment)
+[ 59.63s] [Customer-32] finished washing on Washer-3
+[ 59.63s] [Dryer-3] Drying started for Customer-32 (4453ms)
+[ 59.74s] [Customer-17] !! Kiosk-2 is out of order (17 customers waiting at payment)
+[ 59.81s] [Customer-30] finished drying on Dryer-1
+[ 59.81s] [Customer-30] !! Kiosk-1 is out of order (29 customers waiting at payment)
+[ 59.87s] [Customer-09] !! Kiosk-2 is out of order (8 customers waiting at payment)
+[ 59.89s] [Customer-28] finished drying on Dryer-2
+[ 59.89s] {EVENT} OWNER CALLED IN: 30 customers jammed at payment!
+[ 59.89s] [Customer-28] !! Kiosk-1 is out of order (30 customers waiting at payment)
+[ 59.93s] [Customer-13] !! Kiosk-2 is out of order (12 customers waiting at payment)
+[ 59.95s] [Customer-02] !! Kiosk-1 is out of order (2 customers waiting at payment)
+[ 60.19s] [Customer-31] finished drying on Dryer-4
+[ 60.19s] [Customer-31] !! Kiosk-2 is out of order (31 customers waiting at payment)
+[ 60.20s] [Customer-06] !! Kiosk-1 is out of order (6 customers waiting at payment)
+[ 60.21s] [Customer-29] !! Kiosk-2 is out of order (28 customers waiting at payment)
+[ 60.23s] [Customer-19] !! Kiosk-1 is out of order (19 customers waiting at payment)
+[ 60.33s] [Customer-14] !! Kiosk-2 is out of order (14 customers waiting at payment)
+[ 60.36s] [Washer-1] Washing started for Customer-36 (4876ms)
+[ 60.40s] [Customer-18] !! Kiosk-1 is out of order (18 customers waiting at payment)
+[ 60.42s] [Customer-16] !! Kiosk-2 is out of order (16 customers waiting at payment)
+[ 60.42s] [Customer-05] !! Kiosk-1 is out of order (5 customers waiting at payment)
+[ 60.43s] [Customer-22] !! Kiosk-2 is out of order (22 customers waiting at payment)
+[ 60.50s] [Customer-08] !! Kiosk-1 is out of order (9 customers waiting at payment)
+[ 60.69s] [Customer-20] !! Kiosk-2 is out of order (20 customers waiting at payment)
+[ 60.70s] [Customer-10] !! Kiosk-1 is out of order (10 customers waiting at payment)
+[ 60.71s] [Customer-12] !! Kiosk-2 is out of order (13 customers waiting at payment)
+[ 60.75s] [Customer-33] finished washing on Washer-4
+[ 60.75s] [Dryer-1] Drying started for Customer-33 (4536ms)
+[ 60.78s] [Customer-03] !! Kiosk-1 is out of order (3 customers waiting at payment)
+[ 60.84s] [Customer-34] finished washing on Washer-5
+[ 60.84s] [Dryer-2] Drying started for Customer-34 (3021ms)
+[ 60.84s] [Customer-15] !! Kiosk-2 is out of order (15 customers waiting at payment)
+[ 60.84s] [Customer-11] !! Kiosk-1 is out of order (11 customers waiting at payment)
+[ 60.96s] [Customer-07] !! Kiosk-2 is out of order (7 customers waiting at payment)
+[ 60.99s] [Customer-04] !! Kiosk-1 is out of order (4 customers waiting at payment)
+[ 61.01s] [Customer-26] !! Kiosk-2 is out of order (26 customers waiting at payment)
+[ 61.19s] [Customer-01] !! Kiosk-1 is out of order (1 customers waiting at payment)
+[ 61.22s] [Customer-21] !! Kiosk-2 is out of order (21 customers waiting at payment)
+[ 61.35s] [Customer-25] !! Kiosk-1 is out of order (25 customers waiting at payment)
+[ 61.38s] [Customer-24] !! Kiosk-2 is out of order (23 customers waiting at payment)
+[ 61.48s] [Customer-27] !! Kiosk-1 is out of order (27 customers waiting at payment)
+[ 61.55s] [Customer-23] !! Kiosk-2 is out of order (24 customers waiting at payment)
+[ 61.75s] [Customer-17] !! Kiosk-1 is out of order (17 customers waiting at payment)
+[ 61.81s] [Customer-30] !! Kiosk-2 is out of order (29 customers waiting at payment)
+[ 61.85s] [Washer-2] Washing started for Customer-37 (5443ms)
+[ 61.87s] [Customer-09] !! Kiosk-1 is out of order (8 customers waiting at payment)
+[ 61.89s] [Customer-28] !! Kiosk-2 is out of order (30 customers waiting at payment)
+[ 61.93s] [Customer-13] !! Kiosk-1 is out of order (12 customers waiting at payment)
+[ 61.95s] [Customer-02] !! Kiosk-2 is out of order (2 customers waiting at payment)
+[ 62.07s] [Washer-3] Washing started for Customer-38 (5625ms)
+[ 62.19s] [Customer-31] !! Kiosk-1 is out of order (31 customers waiting at payment)
+[ 62.20s] [Customer-06] !! Kiosk-2 is out of order (6 customers waiting at payment)
+[ 62.22s] [Customer-29] !! Kiosk-1 is out of order (28 customers waiting at payment)
+[ 62.23s] [Customer-19] !! Kiosk-2 is out of order (19 customers waiting at payment)
+[ 62.33s] [Customer-14] !! Kiosk-1 is out of order (14 customers waiting at payment)
+[ 62.40s] [Customer-18] !! Kiosk-2 is out of order (18 customers waiting at payment)
+[ 62.42s] [Customer-16] !! Kiosk-1 is out of order (16 customers waiting at payment)
+[ 62.43s] [Customer-05] !! Kiosk-2 is out of order (5 customers waiting at payment)
+[ 62.44s] [Customer-22] !! Kiosk-1 is out of order (22 customers waiting at payment)
+[ 62.50s] [Customer-08] !! Kiosk-2 is out of order (9 customers waiting at payment)
+[ 62.69s] [Customer-20] !! Kiosk-1 is out of order (20 customers waiting at payment)
+[ 62.70s] [Customer-10] !! Kiosk-2 is out of order (10 customers waiting at payment)
+[ 62.71s] [Customer-12] !! Kiosk-1 is out of order (13 customers waiting at payment)
+[ 62.72s] [Customer-35] finished washing on Washer-6
+[ 62.72s] [Dryer-4] Drying started for Customer-35 (3710ms)
+[ 62.78s] [Washer-4] Washing started for Customer-39 (4551ms)
+[ 62.78s] [Customer-03] !! Kiosk-2 is out of order (3 customers waiting at payment)
+[ 62.84s] [Customer-15] !! Kiosk-2 is out of order (15 customers waiting at payment)
+[ 62.84s] [Customer-11] !! Kiosk-1 is out of order (11 customers waiting at payment)
+[ 62.96s] [Customer-07] !! Kiosk-2 is out of order (7 customers waiting at payment)
+[ 63.00s] [Customer-04] !! Kiosk-1 is out of order (4 customers waiting at payment)
+[ 63.01s] [Customer-26] !! Kiosk-2 is out of order (26 customers waiting at payment)
+[ 63.19s] [Customer-01] !! Kiosk-1 is out of order (1 customers waiting at payment)
+[ 63.22s] [Customer-21] !! Kiosk-2 is out of order (21 customers waiting at payment)
+[ 63.36s] [Customer-25] !! Kiosk-1 is out of order (25 customers waiting at payment)
+[ 63.38s] [Customer-24] !! Kiosk-2 is out of order (23 customers waiting at payment)
+[ 63.48s] [Customer-27] !! Kiosk-1 is out of order (27 customers waiting at payment)
+[ 63.56s] [Customer-23] !! Kiosk-2 is out of order (24 customers waiting at payment)
+[ 63.75s] [Customer-17] !! Kiosk-1 is out of order (17 customers waiting at payment)
+[ 63.81s] [Customer-30] !! Kiosk-2 is out of order (29 customers waiting at payment)
+[ 63.86s] [Customer-34] finished drying on Dryer-2
+[ 63.86s] [Customer-34] !! Kiosk-1 is out of order (32 customers waiting at payment)
+[ 63.88s] [Customer-09] !! Kiosk-2 is out of order (8 customers waiting at payment)
+[ 63.89s] [Customer-28] !! Kiosk-1 is out of order (30 customers waiting at payment)
+[ 63.89s] {EVENT} OWNER ARRIVED! Both payment kiosks repaired - the queue starts moving again.
+[ 63.93s] [Kiosk-2] Payment started for Customer-13 (1041ms)
+[ 63.95s] [Kiosk-1] Payment started for Customer-02 (1735ms)
+[ 64.08s] [Customer-32] finished drying on Dryer-3
+[ 64.96s] [Washer-5] Washing started for Customer-40 (4695ms)
+[ 64.97s] [Kiosk-2] Payment started for Customer-32 (1308ms)
+[ 64.97s] [Customer-13] paid at Kiosk-2 (attempt 20)
+[ 64.97s] [Customer-13] done - left the laundromat after 46.74s total.
+[ 65.24s] [Customer-36] finished washing on Washer-1
+[ 65.24s] [Dryer-2] Drying started for Customer-36 (4771ms)
+[ 65.28s] [Customer-33] finished drying on Dryer-1
+[ 65.69s] [Kiosk-1] Payment started for Customer-31 (1178ms)
+[ 65.69s] [Customer-02] paid at Kiosk-1 (attempt 28)
+[ 65.69s] [Customer-02] done - left the laundromat after 63.93s total.
+[ 66.28s] [Kiosk-2] Payment started for Customer-06 (1596ms)
+[ 66.28s] [Customer-32] paid at Kiosk-2
+[ 66.28s] [Customer-32] done - left the laundromat after 12.01s total.
+[ 66.44s] [Customer-35] finished drying on Dryer-4
+[ 66.56s] [Washer-6] Washing started for Customer-41 (5828ms)
+[ 66.87s] [Customer-31] paid at Kiosk-1 (attempt 3)
+[ 66.87s] [Customer-31] done - left the laundromat after 13.92s total.
+[ 66.87s] [Kiosk-1] Payment started for Customer-29 (1673ms)
+[ 67.30s] [Customer-37] finished washing on Washer-2
+[ 67.30s] [Dryer-3] Drying started for Customer-37 (4213ms)
+[ 67.33s] [Customer-39] finished washing on Washer-4
+[ 67.33s] [Dryer-1] Drying started for Customer-39 (4655ms)
+[ 67.70s] [Washer-3] !! MACHINE FAILURE mid-cycle! Washing aborted; device will self-repair shortly.
+[ 67.70s] [Customer-38] will retry washing - rejoining the washer queue.
+[ 67.70s] [Washer-1] Washing started for Customer-38 (5402ms)
+[ 67.88s] [Kiosk-2] Payment started for Customer-19 (1200ms)
+[ 67.88s] [Customer-06] paid at Kiosk-2 (attempt 25)
+[ 67.88s] [Customer-06] done - left the laundromat after 60.74s total.
+[ 68.54s] [Kiosk-1] Payment started for Customer-14 (1813ms)
+[ 68.54s] [Customer-29] paid at Kiosk-1 (attempt 4)
+[ 68.54s] [Customer-29] done - left the laundromat after 19.61s total.
+[ 68.98s] [Washer-2] Washing started for Customer-42 (4198ms)
+[ 69.08s] [Customer-19] paid at Kiosk-2 (attempt 12)
+[ 69.08s] [Kiosk-2] Payment started for Customer-18 (1771ms)
+[ 69.08s] [Customer-19] done - left the laundromat after 35.95s total.
+[ 69.20s] {EVENT} Washer-3 repaired and back in service.
+[ 69.66s] [Customer-40] finished washing on Washer-5
+[ 69.66s] [Dryer-4] Drying started for Customer-40 (3699ms)
+[ 70.01s] [Customer-36] finished drying on Dryer-2
+[ 70.36s] [Kiosk-1] Payment started for Customer-16 (1344ms)
+[ 70.36s] [Customer-14] paid at Kiosk-1 (attempt 19)
+[ 70.36s] [Customer-14] done - left the laundromat after 51.30s total.
+[ 70.67s] [Washer-4] Washing started for Customer-43 (4018ms)
+[ 70.85s] [Kiosk-2] Payment started for Customer-05 (1100ms)
+[ 70.85s] [Customer-18] paid at Kiosk-2 (attempt 13)
+[ 70.85s] [Customer-18] done - left the laundromat after 40.70s total.
+[ 71.28s] [Washer-3] Washing started for Customer-44 (4116ms)
+[ 71.51s] [Customer-37] finished drying on Dryer-3
+[ 71.70s] [Kiosk-1] Payment started for Customer-22 (1027ms)
+[ 71.70s] [Customer-16] paid at Kiosk-1 (attempt 16)
+[ 71.70s] [Customer-16] done - left the laundromat after 47.01s total.
+[ 71.95s] [Kiosk-2] Payment started for Customer-08 (1066ms)
+[ 71.95s] [Customer-05] paid at Kiosk-2 (attempt 26)
+[ 71.95s] [Customer-05] done - left the laundromat after 65.02s total.
+[ 71.98s] [Customer-39] finished drying on Dryer-1
+[ 72.36s] [Washer-5] Washing started for Customer-45 (4378ms)
+[ 72.39s] [Customer-41] finished washing on Washer-6
+[ 72.39s] [Dryer-2] Drying started for Customer-41 (4935ms)
+[ 72.73s] [Customer-22] paid at Kiosk-1 (attempt 10)
+[ 72.73s] [Customer-22] done - left the laundromat after 36.07s total.
+[ 72.73s] [Kiosk-1] Payment started for Customer-20 (1141ms)
+[ 73.02s] [Customer-08] paid at Kiosk-2 (attempt 23)
+[ 73.02s] [Customer-08] done - left the laundromat after 62.12s total.
+[ 73.02s] [Kiosk-2] Payment started for Customer-10 (1404ms)
+[ 73.10s] [Customer-38] finished washing on Washer-1
+[ 73.10s] [Dryer-3] Drying started for Customer-38 (3492ms)
+[ 73.18s] [Customer-42] finished washing on Washer-2
+[ 73.18s] [Dryer-1] Drying started for Customer-42 (4102ms)
+[ 73.36s] [Customer-40] finished drying on Dryer-4
+[ 73.87s] [Customer-20] paid at Kiosk-1 (attempt 12)
+[ 73.87s] [Kiosk-1] Payment started for Customer-12 (1474ms)
+[ 73.87s] [Customer-20] done - left the laundromat after 39.90s total.
+[ 74.09s] [Washer-6] Washing started for Customer-46 (4085ms)
+[ 74.43s] [Kiosk-2] Payment started for Customer-03 (1074ms)
+[ 74.43s] [Customer-10] paid at Kiosk-2 (attempt 23)
+[ 74.43s] [Customer-10] done - left the laundromat after 62.01s total.
+[ 74.69s] [Customer-43] finished washing on Washer-4
+[ 74.69s] [Dryer-4] Drying started for Customer-43 (4953ms)
+[ 75.35s] [Kiosk-1] Payment started for Customer-11 (1472ms)
+[ 75.35s] [Customer-12] paid at Kiosk-1 (attempt 20)
+[ 75.35s] [Customer-12] done - left the laundromat after 59.21s total.
+[ 75.40s] [Customer-44] finished washing on Washer-3
+[ 75.50s] [Customer-03] paid at Kiosk-2 (attempt 27)
+[ 75.50s] [Kiosk-2] Payment started for Customer-15 (1633ms)
+[ 75.50s] [Customer-03] done - left the laundromat after 72.52s total.
+[ 75.77s] [Washer-1] Washing started for Customer-47 (4388ms)
+[ 76.60s] [Customer-38] finished drying on Dryer-3
+[ 76.60s] [Dryer-3] Drying started for Customer-44 (3139ms)
+[ 76.74s] [Customer-45] finished washing on Washer-5
+[ 76.82s] [Customer-11] paid at Kiosk-1 (attempt 22)
+[ 76.82s] [Kiosk-1] Payment started for Customer-07 (1268ms)
+[ 76.82s] [Customer-11] done - left the laundromat after 61.88s total.
+[ 77.13s] [Washer-2] Washing started for Customer-48 (4166ms)
+[ 77.13s] [Customer-15] paid at Kiosk-2 (attempt 18)
+[ 77.13s] [Customer-15] done - left the laundromat after 55.44s total.
+[ 77.13s] [Kiosk-2] Payment started for Customer-04 (1857ms)
+[ 77.28s] [Customer-42] finished drying on Dryer-1
+[ 77.28s] [Dryer-1] Drying started for Customer-45 (3604ms)
+[ 77.33s] [Customer-41] finished drying on Dryer-2
+[ 78.09s] [Customer-07] paid at Kiosk-1 (attempt 24)
+[ 78.09s] [Kiosk-1] Payment started for Customer-26 (1368ms)
+[ 78.09s] [Customer-07] done - left the laundromat after 67.97s total.
+[ 78.17s] [Customer-46] finished washing on Washer-6
+[ 78.17s] [Dryer-2] Drying started for Customer-46 (3457ms)
+[ 78.99s] [Kiosk-2] Payment started for Customer-01 (1577ms)
+[ 78.99s] [Customer-04] paid at Kiosk-2 (attempt 27)
+[ 78.99s] [Customer-04] done - left the laundromat after 74.61s total.
+[ 79.46s] [Customer-26] paid at Kiosk-1 (attempt 7)
+[ 79.46s] [Kiosk-1] Payment started for Customer-21 (1509ms)
+[ 79.46s] [Customer-26] done - left the laundromat after 36.56s total.
+[ 79.64s] [Customer-43] finished drying on Dryer-4
+[ 79.74s] [Customer-44] finished drying on Dryer-3
+[ 79.84s] [Washer-4] Washing started for Customer-49 (4076ms)
+[ 79.88s] [Washer-3] Washing started for Customer-50 (4553ms)
+[ 80.16s] [Customer-47] finished washing on Washer-1
+[ 80.16s] [Dryer-4] Drying started for Customer-47 (4726ms)
+[ 80.57s] [Customer-01] paid at Kiosk-2 (attempt 30)
+[ 80.57s] [Kiosk-2] Payment started for Customer-33 (1461ms)
+[ 80.57s] [Customer-01] done - left the laundromat after 80.56s total.
+[ 80.89s] [Customer-45] finished drying on Dryer-1
+[ 80.97s] [Kiosk-1] !! MACHINE FAILURE mid-cycle! Payment aborted; device will self-repair shortly.
+[ 80.97s] [Customer-21] payment failed; retrying in 2000ms.
+[ 80.97s] [Kiosk-1] Payment started for Customer-25 (1796ms)
+[ 81.30s] [Customer-48] finished washing on Washer-2
+[ 81.30s] [Dryer-3] Drying started for Customer-48 (3567ms)
+[ 81.63s] [Customer-46] finished drying on Dryer-2
+[ 82.03s] [Customer-33] paid at Kiosk-2
+[ 82.03s] [Kiosk-2] Payment started for Customer-24 (1401ms)
+[ 82.03s] [Customer-33] done - left the laundromat after 26.94s total.
+[ 82.77s] [Kiosk-1] !! MACHINE FAILURE mid-cycle! Payment aborted; device will self-repair shortly.
+[ 82.77s] [Customer-25] payment failed; retrying in 2000ms.
+[ 82.77s] [Kiosk-1] Payment started for Customer-27 (1938ms)
+[ 83.43s] [Customer-24] paid at Kiosk-2 (attempt 10)
+[ 83.43s] [Kiosk-2] Payment started for Customer-23 (1254ms)
+[ 83.43s] [Customer-24] done - left the laundromat after 43.81s total.
+[ 83.91s] [Customer-49] finished washing on Washer-4
+[ 83.91s] [Dryer-1] Drying started for Customer-49 (4048ms)
+[ 84.43s] [Customer-50] finished washing on Washer-3
+[ 84.43s] [Dryer-2] Drying started for Customer-50 (3582ms)
+[ 84.69s] [Kiosk-2] Payment started for Customer-17 (1209ms)
+[ 84.69s] [Customer-23] paid at Kiosk-2 (attempt 10)
+[ 84.69s] [Customer-23] done - left the laundromat after 46.04s total.
+[ 84.71s] [Customer-27] paid at Kiosk-1 (attempt 7)
+[ 84.71s] [Kiosk-1] Payment started for Customer-30 (1974ms)
+[ 84.71s] [Customer-27] done - left the laundromat after 41.37s total.
+[ 84.86s] [Customer-48] finished drying on Dryer-3
+[ 84.89s] [Customer-47] finished drying on Dryer-4
+[ 85.90s] [Customer-17] paid at Kiosk-2 (attempt 16)
+[ 85.90s] [Kiosk-2] Payment started for Customer-34 (1861ms)
+[ 85.90s] [Customer-17] done - left the laundromat after 58.32s total.
+[ 86.68s] [Customer-30] paid at Kiosk-1 (attempt 4)
+[ 86.68s] [Kiosk-1] Payment started for Customer-09 (1416ms)
+[ 86.68s] [Customer-30] done - left the laundromat after 35.29s total.
+[ 87.76s] [Kiosk-2] Payment started for Customer-28 (1273ms)
+[ 87.76s] [Customer-34] paid at Kiosk-2 (attempt 2)
+[ 87.76s] [Customer-34] done - left the laundromat after 32.08s total.
+[ 87.96s] [Customer-49] finished drying on Dryer-1
+[ 88.02s] [Customer-50] finished drying on Dryer-2
+[ 88.10s] [Customer-09] paid at Kiosk-1 (attempt 24)
+[ 88.10s] [Kiosk-1] Payment started for Customer-35 (1694ms)
+[ 88.10s] [Customer-09] done - left the laundromat after 75.78s total.
+[ 89.03s] [Customer-28] paid at Kiosk-2 (attempt 4)
+[ 89.03s] [Customer-28] done - left the laundromat after 42.77s total.
+[ 89.03s] [Kiosk-2] Payment started for Customer-36 (1414ms)
+[ 89.79s] [Customer-35] paid at Kiosk-1
+[ 89.79s] [Kiosk-1] Payment started for Customer-37 (1785ms)
+[ 89.79s] [Customer-35] done - left the laundromat after 32.20s total.
+[ 90.45s] [Kiosk-2] Payment started for Customer-39 (1842ms)
+[ 90.45s] [Customer-36] paid at Kiosk-2
+[ 90.45s] [Customer-36] done - left the laundromat after 30.09s total.
+[ 91.58s] [Customer-37] paid at Kiosk-1
+[ 91.58s] [Customer-37] done - left the laundromat after 29.72s total.
+[ 91.58s] [Kiosk-1] Payment started for Customer-40 (1089ms)
+[ 92.29s] [Customer-39] paid at Kiosk-2
+[ 92.29s] [Kiosk-2] Payment started for Customer-38 (1581ms)
+[ 92.29s] [Customer-39] done - left the laundromat after 29.52s total.
+[ 92.67s] [Customer-40] paid at Kiosk-1
+[ 92.67s] [Kiosk-1] Payment started for Customer-42 (1603ms)
+[ 92.67s] [Customer-40] done - left the laundromat after 27.71s total.
+[ 93.87s] [Kiosk-2] Payment started for Customer-41 (1143ms)
+[ 93.87s] [Customer-38] paid at Kiosk-2
+[ 93.87s] [Customer-38] done - left the laundromat after 31.80s total.
+[ 94.27s] [Customer-42] paid at Kiosk-1
+[ 94.27s] [Kiosk-1] Payment started for Customer-43 (1469ms)
+[ 94.27s] [Customer-42] done - left the laundromat after 25.29s total.
+[ 95.02s] [Kiosk-2] Payment started for Customer-44 (1468ms)
+[ 95.02s] [Customer-41] paid at Kiosk-2
+[ 95.02s] [Customer-41] done - left the laundromat after 28.46s total.
+[ 95.74s] [Customer-43] paid at Kiosk-1
+[ 95.74s] [Kiosk-1] Payment started for Customer-45 (1129ms)
+[ 95.74s] [Customer-43] done - left the laundromat after 25.07s total.
+[ 96.49s] [Customer-44] paid at Kiosk-2
+[ 96.49s] [Kiosk-2] Payment started for Customer-46 (1770ms)
+[ 96.49s] [Customer-44] done - left the laundromat after 25.21s total.
+[ 96.87s] [Customer-45] paid at Kiosk-1
+[ 96.87s] [Kiosk-1] Payment started for Customer-21 (1421ms)
+[ 96.87s] [Customer-45] done - left the laundromat after 24.51s total.
+[ 98.26s] [Customer-46] paid at Kiosk-2
+[ 98.26s] [Kiosk-2] Payment started for Customer-25 (1484ms)
+[ 98.26s] [Customer-46] done - left the laundromat after 24.17s total.
+[ 98.29s] [Customer-21] paid at Kiosk-1 (attempt 12)
+[ 98.29s] [Kiosk-1] Payment started for Customer-48 (1114ms)
+[ 98.29s] [Customer-21] done - left the laundromat after 61.83s total.
+[ 99.41s] [Kiosk-1] Payment started for Customer-47 (1669ms)
+[ 99.41s] [Customer-48] paid at Kiosk-1
+[ 99.41s] [Customer-48] done - left the laundromat after 22.28s total.
+[ 99.74s] [Customer-25] paid at Kiosk-2 (attempt 10)
+[ 99.74s] [Customer-25] done - left the laundromat after 59.78s total.
+[ 99.74s] [Kiosk-2] Payment started for Customer-49 (1013ms)
+[100.76s] [Kiosk-2] Payment started for Customer-50 (1922ms)
+[100.76s] [Customer-49] paid at Kiosk-2
+[100.76s] [Customer-49] done - left the laundromat after 20.92s total.
+[101.08s] [Customer-47] paid at Kiosk-1
+[101.08s] [Customer-47] done - left the laundromat after 25.31s total.
+[102.68s] [Kiosk-2] !! MACHINE FAILURE mid-cycle! Payment aborted; device will self-repair shortly.
+[102.68s] [Customer-50] payment failed; retrying in 2000ms.
+[104.68s] [Kiosk-1] Payment started for Customer-50 (1907ms)
+[106.59s] [Customer-50] paid at Kiosk-1 (attempt 2)
+[106.59s] [Customer-50] done - left the laundromat after 26.71s total.
+[106.59s] {EVENT} Simulation closed after 106.6 seconds.
+--------------------------------------------------------------
+     SMART LAUNDRY - FINAL STATISTICS
+--------------------------------------------------------------
+ Total customers served      : 50
+ Average total time/customer : 42.38 s
+ Max concurrent washers used : 6
+ Max concurrent dryers used  : 4
+ Washer mid-cycle failures   : 2
+ Kiosk failures              : 477
+--------------------------------------------------------------
