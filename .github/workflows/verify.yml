@@ -1,54 +1,22 @@
-name: Verify Smart Laundry Simulation
+name: Maven verification
 
 on:
   push:
-    branches: [ main ]
-  workflow_dispatch:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
 
 jobs:
-  verify:
+  test:
     runs-on: ubuntu-latest
-    timeout-minutes: 6
-
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-
       - name: Set up Java 17
         uses: actions/setup-java@v4
         with:
           distribution: temurin
           java-version: '17'
-
-      - name: Compile with warnings enabled
-        run: |
-          set -e
-          mkdir -p out
-          javac -Xlint:all -d out src/laundry/*.java
-
-      - name: Verify normal mode (minimum 90 seconds)
-        shell: bash
-        run: |
-          set -euo pipefail
-          start=$(date +%s)
-          timeout 150s java -cp out laundry.Main | tee normal-ci.log
-          end=$(date +%s)
-          duration=$((end-start))
-          echo "Normal mode duration: ${duration}s"
-          test "$duration" -ge 90
-          grep -q "Total customers served      : 50" normal-ci.log
-          grep -q "Simulation closed after" normal-ci.log
-
-      - name: Verify congested mode (minimum 90 seconds)
-        shell: bash
-        run: |
-          set -euo pipefail
-          start=$(date +%s)
-          timeout 180s java -cp out laundry.Main --congested | tee congested-ci.log
-          end=$(date +%s)
-          duration=$((end-start))
-          echo "Congested mode duration: ${duration}s"
-          test "$duration" -ge 90
-          grep -q "OWNER CALLED IN" congested-ci.log
-          grep -q "OWNER ARRIVED" congested-ci.log
-          grep -q "Total customers served      : 50" congested-ci.log
+          cache: maven
+      - name: Run Maven tests
+        run: mvn -B clean test

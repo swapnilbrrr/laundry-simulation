@@ -1,133 +1,130 @@
 # Smart Laundry Facility Simulation
 
-![Java](https://img.shields.io/badge/Java-25-orange?logo=openjdk&logoColor=white)
-![Concurrency](https://img.shields.io/badge/Thread%20Concurrency-Semaphore%20%7C%20synchronized%20%7C%20BlockingQueue-blue)
-![No dependencies](https://img.shields.io/badge/Dependencies-none%20—%20pure%20JDK-green)
-![Swing](https://img.shields.io/badge/GUI-Java%20Swing-lightgrey)
-![Platform](https://img.shields.io/badge/Platform-Windows%20%7C%20macOS%20%7C%20Linux-informational)
-![License](https://img.shields.io/badge/License-Educational%20—%20assignment-red)
+**Module:** Concurrent Programming – CT074-3-2  
+**Student:** Swapnil Katuwal (NP070613)
 
-<!-- tags: java, multithreading, concurrency, semaphore, synchronized, reentrantlock-free, blockingqueue, atomic-variables, swing, gui, simulation, thread-safety, deadlock-prevention, producer-consumer, university-assignment, ct074, concurrent-programming, apo -->
+This project implements the Smart Laundry Facility case study as a Spring Boot + Maven application. The simulation contains **50 customers, 6 washing machines, 4 dryers and 2 payment kiosks**. Each customer follows the same sequence: arrival, washing, drying, payment and exit.
 
-A concurrent-programming assignment (CT074-3-2, Asia Pacific University):
-a **smart self-service laundromat** simulated in pure Java. **50 customer
-threads** compete for **6 washing machines, 4 tumble dryers and 2 payment
-kiosks**, under random arrivals, random device failures and live statistics
-collection — plus a bonus congestion scenario and a live Swing visualisation.
+The simulation is available in **two required modes**:
 
-## Requirements
+- **Normal mode:** customers arrive every 0–3 seconds and use the resources normally. Washer and payment failures are injected with the required 5% probability and customers retry when needed.
+- **Congested mode:** both payment kiosks are offline at the start. Customers continue through washing and drying, then build a payment queue. At 30 waiting customers the owner is called, waits 5 seconds, repairs both kiosks and payment resumes.
 
-- **JDK 17 or newer** (`javac` and `java` on your `PATH`) — developed and verified on JDK 25.
-- **No libraries, no Maven/Gradle** — plain JDK, runs anywhere Java runs.
+## Main features
 
-## Simulation modes
+- Spring Boot 3.2 + Maven project
+- Java 17
+- One Java `Thread` per customer
+- Fair `Semaphore` based resource pools
+- `BlockingQueue` for physical resource hand-off
+- CAS ownership check on every physical resource
+- `synchronized` machine state updates
+- `AtomicInteger`, `AtomicBoolean` and `LongAdder` statistics
+- Pause / Resume / Stop / Reset controls
+- Normal and Congested simulation modes
+- Random and forced failure modes for demonstration/testing
+- Live REST + Server-Sent Events dashboard
+- JUnit 5 concurrency tests
 
-**Normal mode** starts the laundromat normally. Customers arrive every 0–3 seconds,
-compete for the six washers, four dryers and two payment kiosks, and recover from
-the required random failures.
+## Project structure
 
-**Congested mode** starts with both payment kiosks out of service. Customers still
-complete washing and drying, then build a payment queue. When 30 customers are
-waiting, the owner is called and repairs both kiosks so the queue can drain. This
-is the assignment's congestion bonus scenario.
-
-The `--gui` flag can be combined with either mode. The GUI is a live Swing dashboard
-showing resource state, customer count, queue size, average time, failures and peak
-resource usage.
-
-## How to run
-
-**Windows**
-
-```bat
-run.bat                      :: console simulation
-run.bat --gui                :: console + live Swing floor plan
-run.bat --congested          :: bonus: both kiosks broken, owner called at 30 in queue
-run.bat --congested --gui    :: bonus scenario with the GUI
-```
-
-**macOS / Linux**
-
-```sh
-sh run.sh                    # console simulation
-sh run.sh --gui              # with live GUI
-sh run.sh --congested        # bonus congestion scenario
-sh run.sh --congested --gui  # bonus scenario + GUI
-```
-
-**Any OS, manually** (from this folder):
-
-```sh
-javac -d out src/laundry/*.java
-java -cp out laundry.Main            # add --gui / --congested as desired
-```
-
-A run completes all 50 customers and is kept open for a minimum of **90 seconds**.
-The final statistics then show customers served, average time, peak concurrent
-washers/dryers and failures. Normal mode and the bonus congested mode are both
-supported from the same entry point.
-
-## Source layout
-
-```
-laundry-simulation/
-├── run.bat                      Windows compile + run wrapper
-├── run.sh                       macOS/Linux compile + run wrapper
-├── PLAN.md                      design decisions + to-do/done checklist
-├── README.md                    this file
-├── src/laundry/
-│   ├── Main.java                CLI entry point, flags, GUI window bootstrap
-│   ├── Simulation.java          arrival generator, join(), bonus owner trigger
-│   ├── Laundry.java             shared resource: semaphores + device pools + stages
-│   ├── Machine.java             one device; synchronized cycle, failure/repair state
-│   ├── Customer.java            one thread per customer; wash -> dry -> pay
-│   ├── Stats.java               atomic counters, peak tracking, final report
-│   ├── Logger.java              thread-safe console output with elapsed clock
-│   └── LaundromatPanel.java     Swing visualisation (EDT-polled)
+```text
+smart-laundry-simulation/
+├── pom.xml
+├── README.md
 ├── docs/
-│   ├── REPORT-DRAFT.md          skeleton of the written report (20% mark)
-│   └── TESTING.md               test cases, evidence, bug found while testing
-└── logs/
-    ├── run-normal.log           captured console output of a verified run
-    └── run-congested.log        captured output of the bonus scenario
+│   └── IMPLEMENTATION.md
+├── src/
+│   ├── main/
+│   │   ├── java/com/smartlaundry/
+│   │   │   ├── SmartLaundryApplication.java
+│   │   │   ├── controller/SimulationController.java
+│   │   │   ├── service/
+│   │   │   │   ├── SimulationService.java
+│   │   │   │   ├── StatisticsService.java
+│   │   │   │   └── EventService.java
+│   │   │   ├── simulation/
+│   │   │   │   ├── Customer.java
+│   │   │   │   ├── LaundrySimulation.java
+│   │   │   │   ├── SimulationConfig.java
+│   │   │   │   ├── SimulationMode.java
+│   │   │   │   ├── SimulationState.java
+│   │   │   │   ├── FailureMode.java
+│   │   │   │   ├── FailureInjector.java
+│   │   │   │   └── OwnerStatus.java
+│   │   │   ├── resource/
+│   │   │   │   ├── LaundryResource.java
+│   │   │   │   ├── ResourcePool.java
+│   │   │   │   ├── ResourceManager.java
+│   │   │   │   ├── WashingMachine.java
+│   │   │   │   ├── Dryer.java
+│   │   │   │   └── PaymentKiosk.java
+│   │   │   ├── concurrency/PauseController.java
+│   │   │   ├── model/*.java
+│   │   │   └── exception/SimulationException.java
+│   │   └── resources/
+│   │       ├── application.properties
+│   │       └── static/
+│   │           ├── index.html
+│   │           ├── css/style.css
+│   │           └── js/app.js
+│   └── test/java/com/smartlaundry/
+│       ├── SmartLaundryApplicationTests.java
+│       └── simulation/LaundrySimulationTest.java
 ```
 
-## Where each requirement is implemented
+The repository intentionally does not contain generated `target/` files, IDE metadata, old console wrappers or captured run logs. Those are build/runtime artifacts rather than part of the submission source tree.
 
-| Requirement | File · symbol |
-|---|---|
-| Customer as thread, arrival 0–3s | `Simulation.run()` |
-| Washing 4–6s, queue when full | `Laundry.wash()`, `Laundry.WASH_MIN/MAX` |
-| Drying 3–5s, queue when full | `Laundry.dry()` |
-| Payment 1–2s at 2 kiosks | `Laundry.pay()` |
-| Mutual exclusion | `Laundry.acquire()`, `Semaphore`, `Machine.runCycle` (`synchronized`) |
-| Washer mid-cycle failure + retry | `Laundry.wash()` loop, `Machine.failureScheduled`, `Laundry.scheduleRepair()` |
-| Kiosk failure + 2s retry | `Laundry.pay()` loop |
-| Statistics | `Stats` (atomics), printed by `Simulation.run()` |
-| Simultaneous machines | `Semaphore(6)` / `Semaphore(4)` permits — visible in `logs/run-normal.log` |
-| Bonus: congested scenario | `Laundry.kiosksDown`, `Simulation.installOwnerTrigger()` |
-| Bonus: GUI | `LaundromatPanel` |
+## Run the application
 
-## Concurrency facilities used
+Requirements:
 
-| Facility | Where | Why |
-|---|---|---|
-| `Semaphore` (fair) | one per device class in `Laundry` | bounded multi-slot concurrency = queueing without busy-wait |
-| `BlockingQueue` (`ArrayBlockingQueue`) | idle-device pools | exclusive, thread-safe hand-off of machine objects |
-| `synchronized` | `Machine.runCycle()`, `Logger` | small critical sections; uncorrupted output |
-| `AtomicInteger` / `AtomicLong` | `Stats`, owner-trigger CAS | lock-free counters, race-free peak tracking |
-| `volatile` | machine `busy`/`failed`, kiosk outage flag | safe cross-thread visibility for GUI/monitors |
-| `Thread.join()` | `Simulation.run()` | structured wait for all 50 customers |
+- JDK 17 or newer
+- Maven 3.8 or newer
 
-## Assumptions (stated deliberately — the report is marked on this)
+From the project directory:
 
-1. A customer holds exactly one device per stage and never acts for another customer.
-2. Failed washers are withdrawn from service and self-repair after 1.5s; the customer
-   who was using them rejoins the washer queue.
-3. A kiosk glitch clears on the next attempt (5% again per attempt); the "out of order
-   all day" case is only the bonus congested scenario.
-4. "Total time per customer" = arrival instant → payment completed.
-5. The 50-arrival stream (0–3s gaps ⇒ ~75s) plus service tail places the run inside the
-   brief's "1–2 minutes"; the "about 60 seconds" figure is satisfied by the active
-   simulation window after the last arrival.
-6. No queue-priority fairness guarantee beyond the fair semaphore mode used.
+```bash
+mvn clean test
+mvn spring-boot:run
+```
+
+Open:
+
+```text
+http://localhost:8080
+```
+
+Choose **Normal** or **Congested**, select the failure behaviour if needed, then press **Start**.
+
+The dashboard also provides Pause, Resume, Stop and Reset. Stopping a run only stops the simulation executor. The Spring Boot application stays available.
+
+## API
+
+```text
+GET  /api/simulation/state
+GET  /api/simulation/statistics
+GET  /api/simulation/log
+GET  /api/simulation/events
+POST /api/simulation/start?mode=NORMAL&failureMode=RANDOM
+POST /api/simulation/pause
+POST /api/simulation/resume
+POST /api/simulation/stop
+POST /api/simulation/reset
+```
+
+## Concurrency design
+
+`ResourcePool<T>` is the main resource-management abstraction. A fair semaphore represents the available capacity and a blocking queue stores the actual idle resources. The customer releases the current resource before requesting the next one, so the simulation does not create a hold-and-wait cycle.
+
+The dashboard receives immutable snapshots and live events from the backend. Customer threads never update browser state directly. The web layer only displays the simulation state.
+
+## Verification
+
+Run:
+
+```bash
+mvn test
+```
+
+The test suite uses scaled timing values so concurrency logic can be checked quickly without waiting for the real-time assignment delays. It checks customer count, resource limits, lifecycle ordering, forced failures, retry delays, statistics, unique resource allocation, stop/restart/reset, congestion handling and thread attribution.

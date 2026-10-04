@@ -1,7 +1,0 @@
-# Shell scripts must stay LF so they run on Linux/macOS
-*.sh text eol=lf
-# Windows batch files need CRLF
-*.bat text eol=crlf
-# Java/docs: normal text handling
-*.java text
-*.md text
