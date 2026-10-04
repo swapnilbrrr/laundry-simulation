@@ -8,11 +8,10 @@ import java.util.concurrent.ThreadLocalRandom;
  * Drives the whole simulation: spawns 50 customer threads with random
  * 0-3s inter-arrival gaps, waits for everyone, prints the statistics.
  *
- * Timing assumption: with ~25.5s of arrival stream (50 x avg 1.5s gap)
- * plus service time drained through 6 washers / 4 dryers / 2 kiosks,
- * the last customer leaves at roughly 55-65s - the "about 60 seconds"
- * required by the brief. (A fixed artificial stop would cut customers
- * off mid-cycle, so we let natural completion define the duration.)
+ * Customers still arrive using the required random 0-3s gaps. After all 50
+ * customers finish, a 90s minimum runtime is enforced if needed. This keeps
+ * the completed run inside the assignment's 1-2 minute implementation window
+ * without interrupting or cutting off a real customer cycle.
  *
  * Assumptions stated for the report:
  *  - A customer occupies exactly one device per stage, exclusively.
@@ -27,6 +26,9 @@ public class Simulation {
     public static final int ARRIVAL_MIN_MS = 0;
     public static final int ARRIVAL_MAX_MS = 3000;
 
+    /** Minimum wall-clock runtime requested for the submitted simulation. */
+    public static final long MIN_RUNTIME_MS = 90_000L;
+
     private final Laundry laundry;
     private final boolean congested;
 
@@ -40,6 +42,7 @@ public class Simulation {
     public void run() throws InterruptedException {
         Logger.startClock();
         Logger log = laundry.log();
+        laundry.markStarted();
         long start = System.currentTimeMillis();
         log.event("Smart Laundry opens - " + Laundry.WASHERS + " washers, "
                 + Laundry.DRYERS + " dryers, " + Laundry.KIOSKS + " kiosks, "
@@ -68,7 +71,17 @@ public class Simulation {
                       // await thread termination without polling or sleeping "long enough"
         }
 
-        double elapsed = (System.currentTimeMillis() - start) / 1000.0;
+        long elapsedMillis = System.currentTimeMillis() - start;
+        if (elapsedMillis < MIN_RUNTIME_MS) {
+            long remaining = MIN_RUNTIME_MS - elapsedMillis;
+            log.event(String.format(
+                    "All 50 customers completed. Keeping the simulation window open for %.1fs to meet the 90s minimum.",
+                    remaining / 1000.0));
+            Thread.sleep(remaining);
+            elapsedMillis = System.currentTimeMillis() - start;
+        }
+
+        double elapsed = elapsedMillis / 1000.0;
         log.event(String.format("Simulation closed after %.1f seconds.", elapsed));
         System.out.println(laundry.stats().report());
     }
@@ -85,6 +98,7 @@ public class Simulation {
         laundry.setPaymentQueueListener(() -> {
             int q = laundry.stats().waitingForPayment().get();
             if (q >= Laundry.OWNER_CALLED_AT && ownerCalled.compareAndSet(false, true)) {
+                laundry.markOwnerCalled();
                 laundry.log().event("OWNER CALLED IN: " + q + " customers jammed at payment!");
                 Thread owner = new Thread(() -> {
                     try {

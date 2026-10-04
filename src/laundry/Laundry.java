@@ -49,6 +49,10 @@ import java.util.concurrent.atomic.AtomicInteger;
  */
 public class Laundry {
 
+    private final boolean congestedScenario;
+    private volatile boolean ownerCalled = false;
+    private volatile long startMillis = 0L;
+
     public static final int WASHERS = 6;
     public static final int DRYERS = 4;
     public static final int KIOSKS = 2;
@@ -91,6 +95,7 @@ public class Laundry {
     private volatile boolean kiosksDown = false;
 
     public Laundry(boolean congestedScenario) {
+        this.congestedScenario = congestedScenario;
         for (int i = 1; i <= WASHERS; i++) {
             Machine m = new Machine(i, Machine.Kind.WASHER);
             allWashers.add(m);
@@ -129,6 +134,17 @@ public class Laundry {
     public Logger log() { return log; }
     public Stats stats() { return stats; }
     public void setPaymentQueueListener(Runnable r) { this.paymentQueueListener = r; }
+
+    public void markStarted() { startMillis = System.currentTimeMillis(); }
+
+    public double elapsedSeconds() {
+        if (startMillis == 0L) return 0.0;
+        return (System.currentTimeMillis() - startMillis) / 1000.0;
+    }
+
+    public boolean isCongestedScenario() { return congestedScenario; }
+    public boolean ownerCalled() { return ownerCalled; }
+    public void markOwnerCalled() { ownerCalled = true; }
 
     /* =====================================================================
      * STAGE 1 - WASHING (basic requirement 2, error handling requirement 2)

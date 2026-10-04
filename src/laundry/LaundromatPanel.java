@@ -7,139 +7,243 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.Timer;
 import javax.swing.border.EmptyBorder;
+import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.Font;
+import java.awt.GridLayout;
 import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Bonus requirement 2: Swing GUI visualising the laundromat live.
+ * Live Swing dashboard for the bonus GUI requirement.
  *
- * Concurrency notes (relevant for the report):
- * - Swing is single-threaded: ALL component mutation happens on the Event
- *   Dispatch Thread. A javax.swing.Timer fires its ActionListener on the
- *   EDT, so we poll the (volatile / synchronized) machine state every
- *   200ms and repaint from the EDT only - no cross-thread Swing access,
- *   which is the classic thread-confined UI pattern.
- * - Reading Machine.busy/failed is safe without locking because those
- *   fields are volatile: readers always see a recent, fully-written value.
- *
- * Visual design: minimal light theme - neutral surfaces, a single blue
- * accent for "in use", and red reserved exclusively for faults.
+ * Swing components are updated only by the Event Dispatch Thread through a
+ * javax.swing.Timer. Customer threads only change shared simulation state.
  */
 public class LaundromatPanel extends JPanel {
 
     private static final long serialVersionUID = 1L;
 
-    private static final Color BG        = new Color(0x1B1F24);
-    private static final Color TEXT      = new Color(0xE8EAED);
-    private static final Color TEXT_SOFT = new Color(0x9AA1AC);
-    private static final Color IDLE_BG   = new Color(0xFFFFFF);
-    private static final Color IDLE_LINE = new Color(0xE2E5EA);
-    private static final Color BUSY_BG   = new Color(0x2563EB);
-    private static final Color BUSY_LINE = new Color(0x2563EB);
-    private static final Color FAULT_BG  = new Color(0xFDECEC);
-    private static final Color FAULT_LINE= new Color(0xF1B8B8);
-    private static final Color FAULT_TXT = new Color(0xB42318);
+    private static final Color BG = new Color(0x0F172A);
+    private static final Color SURFACE = new Color(0x111827);
+    private static final Color SURFACE_2 = new Color(0x1E293B);
+    private static final Color BORDER = new Color(0x334155);
+    private static final Color TEXT = new Color(0xF8FAFC);
+    private static final Color MUTED = new Color(0x94A3B8);
+    private static final Color BLUE = new Color(0x38BDF8);
+    private static final Color RED = new Color(0xEF4444);
+    private static final Color RED_SOFT = new Color(0x451A1A);
 
-    private static final Font CHIP_FONT = new Font("Segoe UI", Font.PLAIN, 13);
-    private static final Font SECTION_FONT = new Font("Segoe UI", Font.BOLD, 11);
+    private static final Font TITLE = new Font("Segoe UI", Font.BOLD, 24);
+    private static final Font H2 = new Font("Segoe UI", Font.BOLD, 13);
+    private static final Font BODY = new Font("Segoe UI", Font.PLAIN, 12);
+    private static final Font VALUE = new Font("Segoe UI", Font.BOLD, 21);
+    private static final Font SMALL = new Font("Segoe UI", Font.PLAIN, 11);
 
     private final transient Laundry laundry;
     private final transient List<Machine> machines = new ArrayList<>();
-    private final transient List<JLabel> chips = new ArrayList<>();
-    private final JLabel statsLabel = new JLabel(" ");
+    private final transient List<JLabel> machineCards = new ArrayList<>();
 
-    @SuppressWarnings("this-escape") // BoxLayout legitimately needs 'this' during construction
+    private final JLabel modeLabel = new JLabel();
+    private final JLabel elapsedLabel = new JLabel();
+    private final JLabel servedValue = new JLabel("0 / 50");
+    private final JLabel queueValue = new JLabel("0");
+    private final JLabel averageValue = new JLabel("0.0 s");
+    private final JLabel failureValue = new JLabel("0");
+    private final JLabel peakValue = new JLabel("W 0  ·  D 0");
+    private final JLabel ownerBanner = new JLabel();
+
     public LaundromatPanel(Laundry laundry) {
         this.laundry = laundry;
-        setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
         setBackground(BG);
-        setBorder(new EmptyBorder(20, 24, 20, 24));
+        setBorder(new EmptyBorder(22, 24, 22, 24));
+        setLayout(new BorderLayout(0, 16));
+
+        add(buildHeader(), BorderLayout.NORTH);
+        add(buildCenter(), BorderLayout.CENTER);
+        add(buildFooter(), BorderLayout.SOUTH);
+
+        Timer timer = new Timer(200, e -> refresh());
+        timer.setCoalesce(true);
+        timer.start();
+        refresh();
+    }
+
+    private JPanel buildHeader() {
+        JPanel header = new JPanel(new BorderLayout(12, 8));
+        header.setOpaque(false);
+
+        JPanel titleBlock = new JPanel();
+        titleBlock.setOpaque(false);
+        titleBlock.setLayout(new BoxLayout(titleBlock, BoxLayout.Y_AXIS));
 
         JLabel title = new JLabel("Smart Laundry Facility");
         title.setForeground(TEXT);
-        title.setFont(new Font("Segoe UI", Font.BOLD, 17));
-        title.setAlignmentX(LEFT_ALIGNMENT);
-        add(title);
-        add(Box.createVerticalStrut(18));
+        title.setFont(TITLE);
 
-        add(section("Washing area"));
-        addRow(laundry.washers());
-        add(Box.createVerticalStrut(14));
-        add(section("Drying area"));
-        addRow(laundry.dryers());
-        add(Box.createVerticalStrut(14));
-        add(section("Payment"));
-        addRow(laundry.kiosks());
+        JLabel subtitle = new JLabel("Concurrent Programming · 50 customer simulation");
+        subtitle.setForeground(MUTED);
+        subtitle.setFont(BODY);
 
-        statsLabel.setForeground(TEXT_SOFT);
-        statsLabel.setFont(new Font("Segoe UI", Font.PLAIN, 13));
-        statsLabel.setAlignmentX(LEFT_ALIGNMENT);
-        add(Box.createVerticalStrut(22));
-        add(statsLabel);
+        titleBlock.add(title);
+        titleBlock.add(Box.createVerticalStrut(4));
+        titleBlock.add(subtitle);
 
-        // Poll on the EDT - never touch Swing from customer threads.
-        Timer timer = new Timer(200, e -> refresh());
-        timer.start();
+        JPanel right = new JPanel(new FlowLayout(FlowLayout.RIGHT, 8, 0));
+        right.setOpaque(false);
+        styleBadge(modeLabel, BLUE);
+        styleBadge(elapsedLabel, MUTED);
+        right.add(modeLabel);
+        right.add(elapsedLabel);
+
+        header.add(titleBlock, BorderLayout.WEST);
+        header.add(right, BorderLayout.EAST);
+        return header;
     }
 
-    private JPanel section(String name) {
-        JPanel p = new JPanel(new FlowLayout(FlowLayout.LEFT, 0, 0));
-        p.setOpaque(false);
-        p.setAlignmentX(LEFT_ALIGNMENT);
-        p.setMaximumSize(new Dimension(Integer.MAX_VALUE, 22));
-        JLabel l = new JLabel(name.toUpperCase());
-        l.setForeground(TEXT_SOFT);
-        l.setFont(SECTION_FONT);
-        p.add(l);
-        return p;
+    private JPanel buildCenter() {
+        JPanel center = new JPanel(new BorderLayout(0, 14));
+        center.setOpaque(false);
+
+        JPanel summary = new JPanel(new GridLayout(1, 5, 10, 0));
+        summary.setOpaque(false);
+        summary.add(statCard("CUSTOMERS SERVED", servedValue));
+        summary.add(statCard("PAYMENT QUEUE", queueValue));
+        summary.add(statCard("AVG TOTAL TIME", averageValue));
+        summary.add(statCard("FAILURES", failureValue));
+        summary.add(statCard("PEAK USE", peakValue));
+        center.add(summary, BorderLayout.NORTH);
+
+        JPanel resources = new JPanel();
+        resources.setOpaque(false);
+        resources.setLayout(new BoxLayout(resources, BoxLayout.Y_AXIS));
+        resources.add(resourceSection("WASHING MACHINES", laundry.washers()));
+        resources.add(Box.createVerticalStrut(12));
+        resources.add(resourceSection("DRYERS", laundry.dryers()));
+        resources.add(Box.createVerticalStrut(12));
+        resources.add(resourceSection("PAYMENT KIOSKS", laundry.kiosks()));
+        center.add(resources, BorderLayout.CENTER);
+        return center;
     }
 
-    private void addRow(List<Machine> list) {
-        JPanel row = new JPanel(new FlowLayout(FlowLayout.LEFT, 10, 4));
-        row.setOpaque(false);
-        row.setAlignmentX(LEFT_ALIGNMENT);
-        row.setMaximumSize(new Dimension(Integer.MAX_VALUE, 56));
-        for (Machine m : list) {
-            JLabel chip = new JLabel(m.label());
-            chip.setPreferredSize(new Dimension(118, 42));
-            chip.setOpaque(true);
-            chip.setHorizontalAlignment(JLabel.CENTER);
-            chip.setFont(CHIP_FONT);
-            row.add(chip);
-            machines.add(m);
-            chips.add(chip);
+    private JPanel buildFooter() {
+        JPanel footer = new JPanel(new BorderLayout(12, 0));
+        footer.setOpaque(false);
+
+        ownerBanner.setFont(BODY);
+        ownerBanner.setBorder(new EmptyBorder(9, 12, 9, 12));
+        footer.add(ownerBanner, BorderLayout.CENTER);
+
+        JLabel legend = new JLabel("● idle    ● in use    ● fault");
+        legend.setFont(SMALL);
+        legend.setForeground(MUTED);
+        footer.add(legend, BorderLayout.EAST);
+        return footer;
+    }
+
+    private JPanel statCard(String caption, JLabel value) {
+        JPanel card = new JPanel();
+        card.setBackground(SURFACE);
+        card.setBorder(BorderFactory.createCompoundBorder(
+                BorderFactory.createLineBorder(BORDER),
+                new EmptyBorder(11, 12, 11, 12)));
+        card.setLayout(new BoxLayout(card, BoxLayout.Y_AXIS));
+
+        JLabel label = new JLabel(caption);
+        label.setForeground(MUTED);
+        label.setFont(SMALL);
+        value.setForeground(TEXT);
+        value.setFont(VALUE);
+
+        card.add(label);
+        card.add(Box.createVerticalStrut(5));
+        card.add(value);
+        return card;
+    }
+
+    private JPanel resourceSection(String title, List<Machine> list) {
+        JPanel section = new JPanel(new BorderLayout(0, 6));
+        section.setOpaque(false);
+        section.setMaximumSize(new Dimension(Integer.MAX_VALUE, 78));
+
+        JLabel heading = new JLabel(title);
+        heading.setForeground(MUTED);
+        heading.setFont(H2);
+
+        JPanel grid = new JPanel(new GridLayout(1, list.size(), 8, 0));
+        grid.setOpaque(false);
+
+        for (Machine machine : list) {
+            JLabel card = new JLabel(machine.label(), JLabel.CENTER);
+            card.setOpaque(true);
+            card.setFont(BODY);
+            card.setPreferredSize(new Dimension(110, 42));
+            grid.add(card);
+            machines.add(machine);
+            machineCards.add(card);
         }
-        add(row);
+
+        section.add(heading, BorderLayout.NORTH);
+        section.add(grid, BorderLayout.CENTER);
+        return section;
+    }
+
+    private void styleBadge(JLabel label, Color accent) {
+        label.setForeground(accent);
+        label.setFont(H2);
+        label.setOpaque(true);
+        label.setBackground(SURFACE_2);
+        label.setBorder(BorderFactory.createCompoundBorder(
+                BorderFactory.createLineBorder(BORDER),
+                new EmptyBorder(6, 10, 6, 10)));
     }
 
     private void refresh() {
+        modeLabel.setText(laundry.isCongestedScenario() ? "  CONGESTED MODE  " : "  NORMAL MODE  ");
+        elapsedLabel.setText(String.format("  %.0f s  ", laundry.elapsedSeconds()));
+
+        Stats stats = laundry.stats();
+        servedValue.setText(stats.served() + " / 50");
+        queueValue.setText(Integer.toString(stats.waitingForPayment().get()));
+        averageValue.setText(String.format("%.1f s", stats.averageSeconds()));
+        failureValue.setText(Integer.toString(stats.washerFailures() + stats.kioskFailures()));
+        peakValue.setText("W " + stats.peakWashers() + "  ·  D " + stats.peakDryers());
+
         for (int i = 0; i < machines.size(); i++) {
             Machine m = machines.get(i);
-            JLabel chip = chips.get(i);
+            JLabel card = machineCards.get(i);
             if (m.isFailed()) {
-                chip.setBackground(FAULT_BG);
-                chip.setBorder(BorderFactory.createLineBorder(FAULT_LINE, 1));
-                chip.setForeground(FAULT_TXT);
-                chip.setText(m.label() + "  fault");
+                card.setBackground(RED_SOFT);
+                card.setForeground(new Color(0xFCA5A5));
+                card.setBorder(BorderFactory.createLineBorder(RED));
+                card.setText(m.label() + " · FAULT");
             } else if (m.isBusy()) {
-                chip.setBackground(BUSY_BG);
-                chip.setBorder(BorderFactory.createLineBorder(BUSY_LINE, 1));
-                chip.setForeground(Color.WHITE);
-                chip.setText(m.label() + "  in use");
+                card.setBackground(new Color(0x0C4A6E));
+                card.setForeground(Color.WHITE);
+                card.setBorder(BorderFactory.createLineBorder(BLUE));
+                card.setText(m.label() + " · IN USE");
             } else {
-                chip.setBackground(IDLE_BG);
-                chip.setBorder(BorderFactory.createLineBorder(IDLE_LINE, 1));
-                chip.setForeground(TEXT_SOFT);
-                chip.setText(m.label() + "  idle");
+                card.setBackground(SURFACE_2);
+                card.setForeground(MUTED);
+                card.setBorder(BorderFactory.createLineBorder(BORDER));
+                card.setText(m.label() + " · IDLE");
             }
         }
-        Stats s = laundry.stats();
-        statsLabel.setText(String.format(
-                "%d of 50 customers served    \u00b7    %d in payment queue    \u00b7    avg %.1f s",
-                s.served(), s.waitingForPayment().get(), s.averageSeconds()));
+
+        if (laundry.isCongestedScenario() && laundry.ownerCalled()) {
+            ownerBanner.setText("OWNER CALLED · PAYMENT CONGESTION DETECTED · KIOSKS WILL RECOVER");
+            ownerBanner.setForeground(new Color(0xFDE68A));
+            ownerBanner.setBackground(new Color(0x422006));
+        } else if (laundry.isCongestedScenario()) {
+            ownerBanner.setText("CONGESTED MODE · BOTH PAYMENT KIOSKS ARE OUT OF SERVICE");
+            ownerBanner.setForeground(new Color(0xFCA5A5));
+            ownerBanner.setBackground(RED_SOFT);
+        } else {
+            ownerBanner.setText("SYSTEM RUNNING · RESOURCES ARE SHARED SAFELY BETWEEN CUSTOMER THREADS");
+            ownerBanner.setForeground(new Color(0x86EFAC));
+            ownerBanner.setBackground(new Color(0x052E16));
+        }
     }
 }
