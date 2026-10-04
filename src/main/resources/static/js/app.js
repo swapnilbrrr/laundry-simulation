@@ -15,7 +15,7 @@
   let modalDismissed = false;
 
   async function call(path, method = 'GET') {
-    const res = await fetch(path, { method });
+    const res = await fetch(path, { method, cache: 'no-store' });
     const body = await res.json().catch(() => ({}));
     if (!res.ok) throw new Error(body.error || res.statusText || 'Request failed');
     return body;
@@ -30,7 +30,12 @@
   }
 
   function act(path) {
-    call(path, 'POST').then(render).catch(e => toast(e.message));
+    const controls = document.querySelectorAll('.btn, select');
+    controls.forEach(el => el.dataset.busy = '1');
+    call(path, 'POST')
+      .then(render)
+      .catch(e => toast(e.message))
+      .finally(() => controls.forEach(el => delete el.dataset.busy));
   }
 
   function machineCard(m, icon) {
