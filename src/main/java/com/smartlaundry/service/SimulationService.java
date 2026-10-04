@@ -23,8 +23,9 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.locks.ReentrantLock;
 
 /**
- * Application-level simulation state machine:
- * IDLE -> STARTING -> RUNNING <-> PAUSED -> STOPPING -> STOPPED / COMPLETED.
+ * Simulation state machine: IDLE -> STARTING -> RUNNING <-> PAUSED -> STOPPING -> STOPPED / COMPLETED.
+ * Control actions are serialised by one lock, so two clicks (or two browser tabs) cannot start two runs.
+ * Stop/Reset only cancel the run-specific simulation work; the Spring Boot server keeps running.
  */
 @Service
 public class SimulationService {
@@ -69,7 +70,7 @@ public class SimulationService {
             try {
                 events.broadcast("snapshot", snapshot());
             } catch (RuntimeException ignored) {
-                // A telemetry failure must not kill the ticker.
+                // Telemetry must not terminate the periodic publisher.
             }
         }, 500, 250, TimeUnit.MILLISECONDS);
     }
@@ -78,27 +79,21 @@ public class SimulationService {
     void shutdown() {
         ticker.shutdownNow();
         control.shutdownNow();
-        LaundrySimulation sim = current;
         if (state == SimulationState.RUNNING || state == SimulationState.PAUSED) {
-            sim.stop();
+            current.stop();
         }
     }
 
-    // ------------------------------------------------------------------ controls
     public FacilitySnapshot start(SimulationMode mode, FailureMode failureMode) {
         return startInternal(mode, failureMode, null);
     }
 
-    /**
-     * Test-only overload: production requests use the assignment's fixed 0–3 second
-     * arrival window. Tests may shorten it so concurrency behaviour runs quickly.
-     */
+    /** Test-only overload that shortens arrivals without changing production defaults. */
     public FacilitySnapshot start(SimulationMode mode, FailureMode failureMode, Integer arrivalMaxMs) {
         return startInternal(mode, failureMode, arrivalMaxMs);
     }
 
-    private FacilitySnapshot startInternal(
-            SimulationMode mode, FailureMode failureMode, Integer arrivalMaxMs) {
+    private FacilitySnapshot startInternal(SimulationMode mode, FailureMode failureMode, Integer arrivalMaxMs) {
         lock.lock();
         try {
             if (state != SimulationState.IDLE && state != SimulationState.STOPPED) {
@@ -117,17 +112,17 @@ public class SimulationService {
             stats.reset();
             events.clear();
 
-            LaundrySimulation sim = new LaundrySimulation(
+            LaundrySimulation simulation = new LaundrySimulation(
                     config,
                     mode == null ? SimulationMode.NORMAL : mode,
                     events,
                     stats);
 
-            current = sim;
-            sim.start();
+            current = simulation;
+            simulation.start();
             state = SimulationState.RUNNING;
 
-            sim.completion().thenRunAsync(() -> onCompleted(sim), control);
+            simulation.completion().thenRunAsync(() -> onCompleted(simulation), control);
             return snapshot();
         } finally {
             lock.unlock();
@@ -202,30 +197,25 @@ public class SimulationService {
                 0,
                 "Facility",
                 "-",
-                "Simulation STOPPED - customer threads cancelled, resources restored, web server still running");
+                "Simulation STOPPED - threads cancelled, all machines available, server still running");
     }
 
-    private void onCompleted(LaundrySimulation sim) {
+    private void onCompleted(LaundrySimulation simulation) {
         lock.lock();
         try {
-            if (current != sim || state != SimulationState.RUNNING) {
+            if (current != simulation || state != SimulationState.RUNNING) {
                 return;
             }
-            sim.finish();
+
+            simulation.finish();
             state = SimulationState.COMPLETED;
-            events.publish(
-                    EventType.SUCCESS,
-                    0,
-                    "Facility",
-                    "-",
-                    "SIMULATION COMPLETED - all customers served");
+            events.publish(EventType.SUCCESS, 0, "Facility", "-", "SIMULATION COMPLETED - all customers served");
             events.broadcast("snapshot", snapshot());
         } finally {
             lock.unlock();
         }
     }
 
-    // ------------------------------------------------------------------ queries
     public FacilitySnapshot snapshot() {
         return current.snapshot(state);
     }
@@ -245,3 +235,4 @@ public class SimulationService {
     public List<SimulationEvent> log() {
         return events.history();
     }
+}
