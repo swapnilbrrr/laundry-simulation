@@ -1,51 +1,144 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>LaundroFlow Control</title>
-<link rel="stylesheet" href="/css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Smart Laundry — Operations Console</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-<div class="app">
-<header class="top">
-  <div class="brand"><div class="logo">LF</div><div><span>CT074-3-2</span><h1>LaundroFlow Control</h1></div></div>
-  <div><span id="connection" class="pill">offline</span><span id="state" class="pill">IDLE</span></div>
-</header>
-<main>
-  <aside class="panel controls">
-    <h2>Run control</h2>
-    <label>Mode</label>
-    <select id="mode"><option value="NORMAL">Normal</option><option value="CONGESTED">Congested</option></select>
-    <label>Failure demonstration</label>
-    <select id="failure"><option value="RANDOM">Random 5%</option><option value="FORCE_WASH">Force washer retry</option><option value="FORCE_PAYMENT">Force payment retry</option></select>
-    <div class="buttons"><button id="start" class="primary">Start</button><button id="pause">Pause</button><button id="resume">Resume</button><button id="stop" class="danger">Stop</button></div>
-    <button id="reset" class="wide">Reset</button>
-    <div id="modeHelp" class="help">Normal mode follows the required timing and shared resources.</div>
-  </aside>
+  <header class="masthead">
+    <div class="identity">
+      <div class="mark">SL</div>
+      <div>
+        <div class="eyebrow">CT074-3-2 · CONCURRENT PROGRAMMING</div>
+        <h1>Smart Laundry</h1>
+        <p>Concurrent Facility Operations Console</p>
+      </div>
+    </div>
+    <div class="statusbar">
+      <div class="status-item"><span class="status-key">STATE</span><span id="statePill" class="state s-IDLE">IDLE</span></div>
+      <div class="status-item"><span class="status-key">MODE</span><strong id="simMode">NORMAL</strong></div>
+      <div class="status-item"><span class="status-key">ELAPSED</span><strong id="simTime">00:00</strong></div>
+      <div class="status-item"><span class="status-key">FEED</span><span id="linkPill" class="feed offline"><i></i><b id="linkState">connecting</b></span></div>
+    </div>
+  </header>
 
-  <section class="content">
-    <section class="panel hero"><div><span>LIVE FACILITY</span><h2 id="headline">Ready to run</h2><p id="subtitle">50 customer threads will move through wash, dry, payment and exit.</p></div><div class="clock"><small>elapsed</small><strong id="clock">00:00</strong></div></section>
-
-    <section class="kpis">
-      <div class="panel"><small>Served</small><strong id="served">0 / 50</strong></div>
-      <div class="panel"><small>Active</small><strong id="active">0</strong></div>
-      <div class="panel"><small>Average time</small><strong id="avg">0.0 s</strong></div>
-      <div class="panel"><small>Failures W / P</small><strong id="fail">0 / 0</strong></div>
+  <main class="page">
+    <section class="control-deck card">
+      <div class="deck-title">
+        <span class="section-number">01</span>
+        <div><h2>Run Controls</h2><p>Configure the scenario before launching the customer threads.</p></div>
+      </div>
+      <div class="controls-grid">
+        <div class="field">
+          <label for="selMode">Simulation mode</label>
+          <select id="selMode">
+            <option value="NORMAL">Normal</option>
+            <option value="CONGESTED">Congested</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="selArrival">Customer arrivals</label>
+          <select id="selArrival">
+            <option value="3000">0–3 s · assignment</option>
+            <option value="1000">0–1 s · rush demo</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="selFailure">Failure test</label>
+          <select id="selFailure">
+            <option value="RANDOM">Random 5% · assignment</option>
+            <option value="FORCE_WASH">Force washer failures</option>
+            <option value="FORCE_PAYMENT">Force payment failures</option>
+          </select>
+        </div>
+        <div class="action-row">
+          <button id="btnStart" class="btn primary">Start Simulation</button>
+          <button id="btnPause" class="btn">Pause</button>
+          <button id="btnResume" class="btn">Resume</button>
+          <button id="btnStop" class="btn danger">Stop</button>
+          <button id="btnReset" class="btn ghost">Reset</button>
+        </div>
+      </div>
     </section>
 
-    <section class="panel"><div class="section-head"><h3>Customer flow</h3><small>one resource at a time</small></div><div id="flow" class="flow"></div></section>
-    <section class="panel"><div class="section-head"><h3>Resource floor</h3><small>6 washers · 4 dryers · 2 kiosks</small></div><div id="resources"></div></section>
-  </section>
+    <div id="banner" class="banner hidden" role="alert"></div>
 
-  <aside class="right">
-    <section class="panel"><div class="section-head"><h3>Queues</h3><small>waiting</small></div><div id="queues"></div><div id="owner" class="owner">Owner: not required</div></section>
-    <section class="panel"><div class="section-head"><h3>Concurrency</h3></div><div id="telemetry" class="telemetry"></div></section>
-    <section class="panel events"><div class="section-head"><h3>Live activity</h3><small>thread-aware</small></div><div id="log"></div></section>
-  </aside>
-</main>
-</div>
-<div id="toast" class="toast hidden"></div>
-<script src="/js/app.js"></script>
+    <section class="kpis">
+      <article class="metric card"><span>Arrivals</span><strong id="kArrived">0 / 50</strong><small>customers admitted</small></article>
+      <article class="metric card"><span>Active</span><strong id="kActive">0</strong><small>still inside facility</small></article>
+      <article class="metric card"><span>Completed</span><strong id="kDone">0 / 50</strong><small>successful exits</small></article>
+      <article class="metric card"><span>Avg customer time</span><strong id="kAvg">0.0 s</strong><small>arrival to payment</small></article>
+      <article class="metric card"><span>Failures</span><strong id="kFail">0 / 0</strong><small>washer / payment</small></article>
+    </section>
+
+    <section class="split-main">
+      <div class="left-stack">
+        <section class="card">
+          <div class="section-head"><div><span class="section-number">02</span><h2>Customer Flow</h2></div><span class="hint">one customer thread → one pipeline</span></div>
+          <div id="pipeline" class="pipeline"></div>
+        </section>
+
+        <section class="card">
+          <div class="section-head"><div><span class="section-number">03</span><h2>Facility Resources</h2></div><span class="hint">parallel work is expected</span></div>
+          <div class="resource-section"><div class="resource-title"><b>WASHING</b><span>6 machines</span></div><div id="washers" class="machine-grid six"></div></div>
+          <div class="resource-section"><div class="resource-title"><b>DRYING</b><span>4 dryers</span></div><div id="dryers" class="machine-grid four"></div></div>
+          <div class="resource-section"><div class="resource-title"><b>PAYMENT</b><span>2 kiosks</span></div><div id="kiosks" class="machine-grid two"></div></div>
+        </section>
+
+        <section class="queues-grid">
+          <div class="card queue-card"><div class="queue-head"><h3>Washer Queue</h3><b id="qwc">0</b></div><div id="qw" class="chips"></div></div>
+          <div class="card queue-card"><div class="queue-head"><h3>Dryer Queue</h3><b id="qdc">0</b></div><div id="qd" class="chips"></div></div>
+          <div class="card queue-card" id="payQueueCard"><div class="queue-head"><h3>Payment Queue</h3><b id="qpc">0</b></div><div id="qp" class="chips"></div></div>
+        </section>
+      </div>
+
+      <aside class="right-stack">
+        <section class="card stat-card">
+          <div class="section-head compact"><div><span class="section-number">04</span><h2>Statistics</h2></div></div>
+          <div id="stats" class="stats-grid"></div>
+        </section>
+
+        <section class="card log-card">
+          <div class="section-head compact"><div><span class="section-number">05</span><h2>Live Activity</h2></div></div>
+          <div class="log-tools">
+            <div id="filters" class="filters">
+              <button class="filter active" data-f="all">All</button>
+              <button class="filter" data-f="customer">Customer</button>
+              <button class="filter" data-f="washer">Washer</button>
+              <button class="filter" data-f="dryer">Dryer</button>
+              <button class="filter" data-f="payment">Payment</button>
+              <button class="filter" data-f="failures">Failures</button>
+            </div>
+            <label class="auto"><input id="autoScroll" type="checkbox" checked> auto-scroll</label>
+          </div>
+          <div id="log" class="log" aria-live="off"></div>
+        </section>
+      </aside>
+    </section>
+
+    <section class="card customers-card">
+      <div class="section-head"><div><span class="section-number">06</span><h2>Customer Threads</h2></div><span class="hint">thread/resource ownership is visible for every customer</span></div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Customer</th><th>Thread</th><th>Stage</th><th>Resource</th><th>Status</th><th>Arrival</th><th>Total</th></tr></thead>
+          <tbody id="custBody"></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <div id="modal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-panel">
+      <div class="modal-top"><span class="modal-tag">RUN COMPLETE</span><button id="modalClose" class="modal-x">×</button></div>
+      <h2 id="modalTitle">Simulation completed</h2>
+      <div id="modalBody" class="summary-grid"></div>
+      <div class="modal-actions"><button id="modalReset" class="btn primary">Reset &amp; run again</button></div>
+    </div>
+  </div>
+  <div id="toast" class="toast hidden" role="status"></div>
+
+  <script src="js/app.js"></script>
 </body>
 </html>
