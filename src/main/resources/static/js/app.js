@@ -69,7 +69,7 @@
     $('btnResume').disabled = s.state !== 'PAUSED';
     $('btnStop').disabled = !active;
     $('btnReset').disabled = s.state === 'STARTING' || s.state === 'STOPPING';
-    ['selMode', 'selArrival', 'selFailure'].forEach(id => $(id).disabled = !idleLike);
+    ['selMode', 'selFailure'].forEach(id => $(id).disabled = !idleLike);
 
     $('kArrived').textContent = st.customersArrived + ' / ' + s.totalCustomers;
     $('kActive').textContent = st.customersInSystem;
@@ -221,7 +221,7 @@
 
   $('btnStart').onclick = () => {
     modalDismissed = false;
-    act(`/api/simulation/start?mode=${$('selMode').value}&failureMode=${$('selFailure').value}&arrivalMaxMs=${$('selArrival').value}`);
+    act(`/api/simulation/start?mode=${$('selMode').value}&failureMode=${$('selFailure').value}`);
   };
   $('btnPause').onclick = () => act('/api/simulation/pause');
   $('btnResume').onclick = () => act('/api/simulation/resume');
