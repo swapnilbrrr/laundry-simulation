@@ -20,6 +20,21 @@ collection — plus a bonus congestion scenario and a live Swing visualisation.
 - **JDK 17 or newer** (`javac` and `java` on your `PATH`) — developed and verified on JDK 25.
 - **No libraries, no Maven/Gradle** — plain JDK, runs anywhere Java runs.
 
+## Simulation modes
+
+**Normal mode** starts the laundromat normally. Customers arrive every 0–3 seconds,
+compete for the six washers, four dryers and two payment kiosks, and recover from
+the required random failures.
+
+**Congested mode** starts with both payment kiosks out of service. Customers still
+complete washing and drying, then build a payment queue. When 30 customers are
+waiting, the owner is called and repairs both kiosks so the queue can drain. This
+is the assignment's congestion bonus scenario.
+
+The `--gui` flag can be combined with either mode. The GUI is a live Swing dashboard
+showing resource state, customer count, queue size, average time, failures and peak
+resource usage.
+
 ## How to run
 
 **Windows**
@@ -47,8 +62,10 @@ javac -d out src/laundry/*.java
 java -cp out laundry.Main            # add --gui / --congested as desired
 ```
 
-A run takes about 85–105 seconds of wall-clock time, then prints the final
-statistics (customers served, average time, max concurrent machines, failures).
+A run completes all 50 customers and is kept open for a minimum of **90 seconds**.
+The final statistics then show customers served, average time, peak concurrent
+washers/dryers and failures. Normal mode and the bonus congested mode are both
+supported from the same entry point.
 
 ## Source layout
 
