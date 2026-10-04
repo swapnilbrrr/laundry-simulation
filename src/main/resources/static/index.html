@@ -31,7 +31,14 @@
         <div><h2>Run Controls</h2><p>Configure the scenario before launching the customer threads.</p></div>
       </div>
       <div class="controls-grid">
-      <div class="field">
+        <div class="field">
+          <label for="selMode">Simulation mode</label>
+          <select id="selMode">
+            <option value="NORMAL">Normal</option>
+            <option value="CONGESTED">Congested</option>
+          </select>
+        </div>
+        <div class="field">
           <label for="selFailure">Failure test</label>
           <select id="selFailure">
             <option value="RANDOM">Random 5% · assignment</option>
